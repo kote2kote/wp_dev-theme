@@ -1,0 +1,32 @@
+/*==========================================================
+Respond
+===========================================================*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == sm {
+        @media only screen and (max-width: $g-sm) { @content };    //576
+    }
+    @if $breakpoint == md {
+        @media only screen and (max-width: $g-md) { @content };     //768
+    }
+    @if $breakpoint == lg {
+        @media only screen and (max-width: $g-lg) { @content };    //992
+    }
+    @if $breakpoint == xl {
+        @media only screen and (max-width: $g-xl) { @content };    //1200
+    }
+}
+@mixin respond-min($breakpoint) {
+    @if $breakpoint == sm {
+        @media only screen and (min-width: $g-sm) { @content };    //576
+    }
+    @if $breakpoint == md {
+        @media only screen and (min-width: $g-md) { @content };     //768
+    }
+    @if $breakpoint == lg {
+        @media only screen and (min-width: $g-lg) { @content };    //992
+    }
+    @if $breakpoint == xl {
+        @media only screen and (min-width: $g-xl) { @content };    //1200
+    }
+}

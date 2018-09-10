@@ -1,0 +1,187 @@
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.home {
+
+  //navgation
+  .navigation {
+      justify-content: space-between;
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1030;
+
+      .menu__ul > li {
+        @include rem("margin-left", 20);
+    }
+  }
+
+  //hero
+  .hero {
+    background-image: url("assets/images/1920x1080/img3.jpg");
+    position: relative;
+    min-height: 600px;
+    background-position: center;
+    background-size: cover;
+
+    .maintitle {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      text-align: center;
+
+      .maintitle__p {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  //business_logos
+  .business_logos {
+    ul.business_logo {
+      margin: 0;
+    }
+
+  .business_logo > li {
+    flex: 1;
+    }
+  }
+
+  //whywe
+  .whywe {
+    .container {
+      padding: 6.25rem 0;
+    }
+
+    .whywe__box {
+      text-align: center;
+
+      h2 {
+
+      }
+      p {
+
+      }
+    }
+
+    .whywe__features {
+      width: 1200px;
+      margin: 0 auto;
+      &01, &02, &03 {
+        flex: 1;
+      }
+    }
+
+  }
+
+  .counts {
+    .container {
+      padding: 3.25rem 0;
+    }
+
+    .counts__elements {
+      width: 1200px;
+      margin: 0 auto;
+
+      &01, &02, &03, &04 {
+        flex: 1;
+      }
+    }
+  }
+
+  .our_product {
+
+    .container {
+      @include rem("padding", 62.5, 0);
+    }
+    .content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    &__description, &__image {
+      flex: 1;
+    }
+
+    .img {
+      max-width: 100%;
+      height: auto;
+      vertical-align: middle;
+      border-style: none;
+      border-radius: 0.25rem;
+    }
+
+  }
+
+  .our_pricing {
+
+    .container {
+      @include rem("padding", 62.5, 0);
+    }
+    .content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    &__title {
+      text-align: center;
+    }
+
+    &__content {
+      justify-content: space-between;
+    }
+    &__content_l {
+      flex: 1;
+      flex-wrap: wrap;
+      .item {
+        flex: 0 0 50%;
+        max-width: 50%;//IE11カラム落ち対策
+      }
+    }
+    &__content_r {
+      flex: 0 1 33.3%;
+    }
+
+  }
+
+  .review {
+    .container {
+      @include rem("padding", 62.5, 0);
+    }
+    .content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+
+    &__title {
+      text-align: center;
+    }
+
+    &__voice {
+
+      .voice {
+        flex: 1;
+      }
+    }
+
+  }
+
+  .footer {
+    .container {
+      @include rem("padding", 2.5, 0);
+    }
+    .content {
+      width: 1200px;
+      margin: 0 auto;
+    }
+    .copyright, .social {
+      flex: 1;
+    }
+  }
+
+
+
+
+
+}

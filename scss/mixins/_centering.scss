@@ -1,0 +1,20 @@
+@mixin outside-center {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 0;
+  position: relative;
+}
+
+@mixin center($position: abs) {
+  @if $position == fixed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

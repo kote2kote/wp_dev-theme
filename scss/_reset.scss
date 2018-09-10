@@ -1,0 +1,644 @@
+/*------------------------------------
+  Default Styles
+------------------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  @include respond(md) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-family: $g-font-primary;
+  @include fz($g-font-body-size);
+  line-height: 1.6;
+  color: $g-color-main;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+  text-rendering: optimizelegibility;
+  background-color: $g-bg-color-main;
+}
+
+
+
+/*------------------------------------
+  Headings
+------------------------------------*/
+h1 {@include fz($g-font-body-size * 2.5);}
+h2 {@include fz($g-font-body-size * 2);}
+h3 {@include fz($g-font-body-size * 1.75);}
+h4 {@include fz($g-font-body-size * 1.5);}
+h5 {@include fz($g-font-body-size * 1.25);}
+h6, p {@include fz();}
+
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+
+/*------------------------------------
+  Anchors
+------------------------------------*/
+
+a {
+	color: $g-color-primary;
+  text-decoration: none;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover, a:focus, a:active {
+	color: $g-color-primary-dark-v2;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover, a:active {
+	outline: 0;
+}
+
+/*------------------------------------
+  Elements
+------------------------------------*/
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn, cite, em, i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6rem;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6rem;
+}
+
+code, kbd, tt, var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr, acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark, ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5rem;
+}
+
+ul, ol {
+	margin: 0 0 1.5rem 3rem;
+}
+
+ul {
+	list-style: none;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5rem;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5rem 1.5rem;
+}
+
+img {
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+}
+
+figure {
+	margin: 1rem 0;
+	/* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+	margin: 0 0 1.5rem;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	@include fz();
+	line-height: 1.5;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6rem 1rem .4rem;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*------------------------------------
+  Highlight Color
+------------------------------------*/
+::-moz-selection {
+  color: $g-color-white;
+  background-color: $g-color-primary;
+}
+::selection {
+  color: $g-color-white;
+  background-color: $g-color-primary;
+}
+
+.g-bg-primary ::-moz-selection {
+  color: $g-color-primary;
+  background-color: $g-color-white;
+}
+.g-bg-primary ::selection {
+  color: $g-color-primary;
+  background-color: $g-color-white;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+
+  ul {
+    display: none;
+  	list-style: none;
+  	margin: 0;
+  	padding-left: 0;
+
+    li:hover > ul, li.focus > ul {
+      left: auto;
+    }
+
+    ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    	float: left;
+    	position: absolute;
+    	top: 100%;
+    	left: -999em;
+    	z-index: 99999;
+
+      ul {
+        left: -999em;
+      	top: 0;
+      }
+
+      li:hover > ul, li.focus > ul {
+        left: 100%;
+      }
+
+      a {
+        width: 200px;
+      }
+
+    }
+  }
+
+  li {
+    float: left;
+  	position: relative;
+  }
+
+  a {
+    display: block;
+  	text-decoration: none;
+  }
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+
+  &:focus {
+    background-color: #f1f1f1;
+  	border-radius: 3px;
+  	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  	clip: auto !important;
+  	clip-path: none;
+  	color: #21759b;
+  	display: block;
+  	font-size: 14px;
+  	font-size: 0.875rem;
+  	font-weight: bold;
+  	height: auto;
+  	left: 5px;
+  	line-height: normal;
+  	padding: 15px 23px 14px;
+  	text-decoration: none;
+  	top: 5px;
+  	width: auto;
+  	z-index: 100000;
+  	/* Above WP toolbar. */
+  }
+}
+
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
+
+  select {
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	/* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+  img[class*="wp-image-"] {
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  }
+
+  .wp-caption-text {
+  	margin: 0.8075em 0;
+  }
+
+  &-text {
+    text-align: center;
+  }
+}
+
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+	margin-bottom: 1.5em;
+
+  &-item {
+    display: inline-block;
+  	text-align: center;
+  	vertical-align: top;
+  	width: 100%;
+  }
+
+  &-columns-2 .gallery-item {
+    max-width: 50%;
+  }
+
+  &-columns-3 .gallery-item {
+    max-width: 33.33%;
+  }
+
+  &-columns-4 .gallery-item {
+    max-width: 25%;
+  }
+
+  &-columns-5 .gallery-item {
+    max-width: 20%;
+  }
+
+  &-columns-6 .gallery-item {
+    max-width: 16.66%;
+  }
+
+  &-columns-7 .gallery-item {
+    max-width: 14.28%;
+  }
+
+  &-columns-8 .gallery-item {
+    max-width: 12.5%;
+  }
+
+  &-columns-9 .gallery-item {
+    max-width: 11.11%;
+  }
+
+  &-caption {
+    display: block;
+  }
+}
