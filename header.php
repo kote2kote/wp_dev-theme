@@ -17,6 +17,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+  <!-- Web Fonts -->
+  <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 	<?php wp_head(); ?>
 </head>
 
@@ -26,179 +31,23 @@
     <div class="container">
       <nav class="navigation flex">
 
-        <div class="logo flex ck">
+        <div class="logo flex">
           <div class="logo__stream">
-            Streame
+            <a href="#"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/logo-white.png" alt="Stream" class="logo_img"></a>
           </div>
           <div class="back_to_ui_kit">
-            Back to UI Kitttttttttttttttt
+            <a href="#">Back to UI Kit</a>
           </div>
         </div>
 
-        <div class="menu ck">
+        <div class="menu">
           <ul class="menu__ul flex">
-            <li>Home</li>
-            <li>Service</li>
-            <li>About</li>
-            <li>Contacts</li>
-            <li>Call Me</li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">Call Me</a></li>
           </ul>
         </div>
 
       </nav>
-
-      <section class="hero">
-        <div class="container">
-
-          <div class="maintitle">
-            <p class="maintitle__p">Clean and Fully Responsive Template</p>
-            <h1 class="maintitle__h1">We are Creative</h1>
-            <button>Learn More</button>
-          </div>
-
-        </div>
-      </section>
-
-    </div>
-
-  </header>
-
-  <section class="business_logos">
-    <div class="container">
-      <ul class="business_logo flex cm50">
-        <li class="cm200">test</li>
-        <li class="cm200">test</li>
-        <li class="cm200">test</li>
-        <li class="cm200">test</li>
-        <li class="cm200">test</li>
-        <li class="cm200">test</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="whywe cm0">
-    <div class="container">
-
-      <div class="whywe__box">
-        <h2>test</h2>
-        <p>test</p>
-      </div>
-
-      <div class="whywe__features flex">
-        <div class="whywe__features01 cm100">
-          test
-        </div>
-        <div class="whywe__features02 cm100">
-          test
-        </div>
-        <div class="whywe__features03 cm100">
-          test
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="counts">
-    <div class="container cm0">
-      <div class="counts__elements flex">
-        <div class="counts__elements01 cm100">
-          test
-        </div>
-        <div class="counts__elements02 cm100">
-          test
-        </div>
-        <div class="counts__elements03 cm100">
-          test
-        </div>
-        <div class="counts__elements04 cm100">
-          test
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="our_product">
-    <div class="container cm0">
-      <div class="content flex">
-        <div class="our_product__description cm300">
-          <h2>test</h2>
-          <p>test</p>
-          <p>test</p>
-          <a href="#">test</a>
-          <a href="#">test</a>
-        </div>
-        <div class="our_product__image cm300">
-          <img src="wp-content/themes/wp_dev-theme/assets/images/900x700/img1.png" class="img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="our_pricing">
-    <div class="container cm0">
-      <div class="content">
-
-        <div class="our_pricing__title">
-          <h2>test</h2>
-          <p>test</p>
-        </div>
-
-        <div class="our_pricing__content flex">
-          <div class="our_pricing__content_l flex">
-            <div class="item cm200">
-              test1
-            </div>
-            <div class="item cm200">
-              test2
-            </div>
-            <div class="item cm200">
-              test3
-            </div>
-            <div class="item cm200">
-              test4
-            </div>
-
-          </div>
-          <div class="our_pricing__content_r cm200">
-            test
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="review">
-    <div class="container cm0">
-      <div class="content">
-
-        <div class="review__title cm100">
-          <h2>test</h2>
-          <p>test</p>
-        </div>
-
-        <div class="review__voice flex">
-          <div class="voice cm200">
-            test
-          </div>
-          <div class="voice cm200">
-            test
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container cm0">
-      <div class="content flex">
-        <div class="copyright cm50">
-          test
-        </div>
-        <div class="social cm50">
-          test
-        </div>
-      </div>
-    </div>
-  </footer>
