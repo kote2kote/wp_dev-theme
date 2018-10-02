@@ -35,7 +35,32 @@ get_header(); ?>
 </ul>
 </div>
 </section>
-
+<section class="js-clients u-clients">
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img1.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img2.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img3.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img4.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img5.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img6.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img7.png" alt="Image Description">
+       </div>
+       <div class="u-clients__item">
+         <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img8.png" alt="Image Description">
+       </div>
+     </section>
 <section class="whywe">
 <div class="container">
 

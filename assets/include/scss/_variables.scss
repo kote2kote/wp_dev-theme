@@ -19,10 +19,10 @@ $g-font-1rem-10px: true;
 
 $g-2xs: 446px !default; // Double extra small devices (<=445px)
 // Extra small devices (portrait phones, <=575px)
-$g-sm: 36em !default; // Small devices (landscape phones, >=576 & <=767)
-$g-md: 48em !default; // Medium devices (tablets, >=768 & <=991)
-$g-lg: 62em !default; // Large devices (desktops, >=992 & <=1199)
-$g-xl: 75em !default; // Extra large devices (large desktops, >=1200)
+$g-sm: 576px !default; // Small devices (landscape phones, >=576 & <=767)
+$g-md: 768px !default; // Medium devices (tablets, >=768 & <=991)
+$g-lg: 992px !default; // Large devices (desktops, >=992 & <=1199)
+$g-xl: 1200px !default; // Extra large devices (large desktops, >=1200)
 // If you want to use "max-width" than var-1. For exmaple: @media (max-width: #{$g-lg}-1) {...}
 
 

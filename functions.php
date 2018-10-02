@@ -44,7 +44,8 @@ if ( ! function_exists( 'wp_dev_theme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'wp_dev_theme' ),
+			'common_header' => esc_html__( '共通ヘッダー', 'wp_dev_theme' ),
+    	'common_footer' => esc_html__( '共通フッター', 'wp_dev_theme' ),
 		) );
 
 		/*
@@ -120,11 +121,25 @@ add_action( 'widgets_init', 'wp_dev_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wp_dev_theme_scripts() {
-	wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'wp_dev_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+  //キャッシュ対策
+  date_default_timezone_set('Asia/Tokyo');
+  $id = date("YmdHis"); ;
 
-	wp_enqueue_script( 'wp_dev_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+  //CSS
+	wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
+
+  //JS
+  wp_enqueue_script( 'wp_dev_theme-jquery-js', get_template_directory_uri(). '/assets/vendors/jquery/jquery-3.3.1.js', array(), $id, true);
+
+  wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
+    wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
+
+  wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
+
+	wp_enqueue_script( 'wp_dev_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $id, true );
+
+	wp_enqueue_script( 'wp_dev_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $id, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
