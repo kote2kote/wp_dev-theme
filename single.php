@@ -9,12 +9,14 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area col">
+		<main id="main" class="site-main cm0">
 
 		<?php
 		while ( have_posts() ) :
+			?>
+			<h2 class="h2">single.php - type: <?php echo get_post_type();?></h2>
+			<?php
 			the_post();
 
 			get_template_part( 'template-parts/content', get_post_type() );

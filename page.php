@@ -15,11 +15,14 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area cm0 col">
 		<main id="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
+			?>
+			<h2 class="h2">page.php - type: <?php echo get_post_type();?></h2>
+			<?php
 			the_post();
 
 			get_template_part( 'template-parts/content', 'page' );

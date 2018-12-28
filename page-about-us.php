@@ -3,10 +3,10 @@
 	Template Name: About Us Page
 */
 //get_template_part('content','hero');
-get_header(); ?>
+get_header("ui-kit"); ?>
 
 <section class="hero">
-  <div class="container">
+  <div class="Container">
 
     <div class="maintitle">
       <h1 class="maintitle__h1">About Us</h1>
@@ -187,4 +187,4 @@ get_header(); ?>
   </div>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer("ui-kit"); ?>

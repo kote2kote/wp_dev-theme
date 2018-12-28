@@ -1,0 +1,240 @@
+
+/*============================================================================*/
+//About Us
+/*============================================================================*/
+.page-template-page-about-us {
+  .hero {
+    .Container {
+      @include outside-center();
+      background-image: url("assets/images/1920x1080/img6.jpg");
+      //background-image: url("https://picsum.photos/1920/1080/?random");
+      min-height: 500px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom:0 ;
+        left: 0;
+        background-color: rgba(27, 30, 36, 0.3);
+      }
+
+    }
+
+    .maintitle {
+      @include center();
+      // position: absolute;
+      // top: 50%;
+      // left: 50%;
+      // transform: translate(-50%, -50%);
+
+      color: #fff;
+      //transform: translate3d(0, -50%, 0);
+      text-align: center;
+      z-index: 1;
+
+      .maintitle__h1 {
+        font-weight: 500;
+        @include fz(72);
+      }
+      .maintitle__p {
+        font-weight: 400;
+        text-transform: uppercase;
+        @include fz(16);
+      }
+    }
+  }
+
+  .about_text {
+    @include rem("padding", 70, 0);
+    text-align: center;
+    position: relative;
+
+    .section-content:before {
+      position: absolute;
+      content: "";
+      left: 50%;
+      margin-left: -20px;
+      bottom: -25px;
+      border-style: solid;
+      border-width: 25px 20px 0 20px;
+      border-color: #fff transparent transparent transparent;
+      z-index: 3;
+    }
+
+    .p1, .p2 {
+      @include fz(20);
+      strong {
+        color: $g-purple;
+      }
+    }
+
+  }
+
+  .three-features {
+    @include rem("padding", 80, 0);
+    background-color: #F5F9FC;
+
+    .flex {
+      @include bp(lg) {
+        flex-direction: column;
+      }
+    }
+
+    .features__item {
+      flex: 1;
+      text-align: center;
+      @include rem("padding-right", 10);
+      @include rem("padding-left", 10);
+
+      @include bp(lg) {
+        @include rem("margin-bottom", 20);
+      }
+
+      &-icon {
+        @include fz(50);
+        color: $g-purple;
+      }
+      &-title {
+        @include fz(20);
+      }
+
+      &-para {
+        @include rem("margin-top", 15);
+
+        a {
+          display: block;
+          @include rem("margin-top", 20);
+        }
+      }
+
+    }
+  }
+
+  .good {
+    @include rem("padding", 80, 0);
+
+    .flex-aitem-bottom {
+      align-items: flex-end;
+    }
+
+    &__title-box {
+      text-align: center;
+      width: 50%;
+      margin: 0 auto;
+      @include rem("margin-bottom", 50);
+      .title {
+        @include fz(40);
+        font-weight: 500;
+      }
+      .text {
+        @include fz(20);
+      }
+    }
+
+    &__graph-box {
+      .graph-box, .text {
+        @include rem("margin", 0, 20);
+        flex: 1;
+      }
+
+      .graph {
+        flex: 1;
+        @include rem("margin", 0, 10);
+        text-align: center;
+
+        &-background {
+          background-color: #F9F7FC;
+          height: 200px;
+          @include rem("margin-bottom", 10);
+
+          .graph-main {
+            background-color: #59287A;
+            border-bottom-right-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            flex: 1;
+          }
+
+          .g01 {
+            height: 90%;
+          }
+
+          .g02 {
+            height: 76%;
+          }
+
+          .g03 {
+            height: 92%;
+          }
+
+          .g04 {
+            height: 81%;
+          }
+
+        }
+
+        small, span {
+          display: block;
+        }
+      }
+    }
+
+    .text {
+      @include rem("margin", 0, 10);
+      .p01 {
+        @include rem("margin-bottom", 20);
+      }
+    }
+  }
+
+  .creative {
+    @include rem("padding", 80, 0);
+    background-color: #F5F9FC;
+
+    .photos {
+      @include rem("margin", 0, 15);
+      // @include rem("padding", 0, 15);
+
+      .image {
+        width: 100%;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+      }
+
+      .person {
+        text-align: center;
+        @include rem("padding", 25, 0);
+        box-shadow: 0 0.2rem 1.25rem 0 rgba(27, 30, 36, 0.07);
+
+        .name {
+          font-weight: 500;
+        }
+        .work {
+          @include fz(13);
+          text-transform: uppercase;
+        }
+      }
+    }
+
+  }
+
+  .companies {
+    @include rem("padding", 80, 0);
+
+    &__logos {
+
+      .logo {
+        flex: 1;
+
+        img {
+          width: 120px;
+          margin: 0 auto;
+          display: block;
+          filter: grayscale(100%);//IEは効かない。後回し
+          @include opacity(0.3);
+         }
+      }
+    }
+  }
+}

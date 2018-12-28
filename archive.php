@@ -9,12 +9,11 @@
 
 get_header();
 ?>
-
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area cm0 col">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
-
+		<h2 class="h2">archive.php - type: <?php echo get_post_type();?></h2>
 			<header class="page-header">
 				<?php
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -50,4 +49,4 @@ get_header();
 
 <?php
 get_sidebar();
-get_footer();
+get_footer()();

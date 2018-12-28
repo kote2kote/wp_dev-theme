@@ -23,10 +23,11 @@
   @while $i <= $n {
     $itemVal: (nth($values, $i));
     @if $itemVal != "auto"{
-      $rem: $itemVal / $g-font-primary-size;
+      //$rem: $itemVal / $g-font-primary-size;
+      $rem: $itemVal / $g-font-body-base;
       $pxlist: append($pxlist, $itemVal + px);
       $remlist: append($remlist, $rem + rem); // Use this if you've set HTML font size value to 62.5%
-      //$remlist: append($remlist, ($itemVal / $g-font-primary-size) + rem);
+      //$remlist: append($remlist, ($itemVal / $g-font-body-size) + rem);
     } @else {
       $pxlist: append($pxlist, auto);
       $remlist: append($remlist, auto);

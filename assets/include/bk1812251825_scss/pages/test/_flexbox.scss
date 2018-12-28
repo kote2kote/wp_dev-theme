@@ -1,0 +1,10 @@
+.fixed-width {
+  flex: 0 0 500px;
+  background-color: rgba(255,0,0,0.1) !important;
+}
+
+.flexbox {
+  .row.test {
+    margin-bottom: 100px;
+  }
+}

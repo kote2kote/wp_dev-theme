@@ -6,12 +6,12 @@
   /*============================================================================*/
   $(function() {
     $(window).on('scroll', function() {
-      var navbarOffset = $('.navigation').offset().top > 150;
+      var navbarOffset = $('.navigation-site').offset().top > 150;
       if(navbarOffset) {
-        $('.navigation').addClass('navigation_on_bg');
+        $('.navigation-site').addClass('navigation-site_on_bg');
       }
       else {
-        $('.navigation').removeClass('navigation_on_bg');
+        $('.navigation-site').removeClass('navigation-site_on_bg');
       }
     });
   });
@@ -42,9 +42,9 @@
         } else if (w <= bp.md){
 
         } else if (w <= bp.lg){
-          if ($('.navigation .back_to_ui_kit').css('display') == '') {
-            $('.navigation .back_to_ui_kit').css('display', 'none');
-            $('.navigation .menu__ul').css('display', 'none');
+          if ($('.navigation-site .back_to_ui_kit').css('display') == '') {
+            $('.navigation-site .back_to_ui_kit').css('display', 'none');
+            $('.navigation-site .menu__ul').css('display', 'none');
             console.log("noneにした");
             //open == false;
           }
@@ -57,15 +57,15 @@
           //$('.navigation .back_to_ui_kit').addClass('display_n');
           //$('.navigation .menu__ul').addClass('display_n');
         } else if (w >= bp.lg){
-          if ($('.navigation .back_to_ui_kit').css('display') == 'none') {
-            $('.navigation .back_to_ui_kit').css('display', '');
-            $('.navigation .menu__ul').css('display', '');
+          if ($('.navigation-site .back_to_ui_kit').css('display') == 'none') {
+            $('.navigation-site .back_to_ui_kit').css('display', '');
+            $('.navigation-site .menu__ul').css('display', '');
             console.log("display空にした");
           }
           else {
             //メニューを開いたままブラウザサイズを広げた場合(display:blockの場合)
-            $('.navigation .back_to_ui_kit').css('display', '');
-            $('.navigation .menu__ul').css('display', '');
+            $('.navigation-site .back_to_ui_kit').css('display', '');
+            $('.navigation-site .menu__ul').css('display', '');
             console.log("同じくdisplay空にした");
           }
 
@@ -83,15 +83,15 @@
         }
     });
 
-    $('.navigation .hummenu').click (function(){
+    $('.navigation-site .hummenu').click (function(){
       if (open == false) {
-        $('.navigation .back_to_ui_kit').css('display', 'block');//ワンカラムなので空ではなくblock
-        $('.navigation .menu__ul').css('display', 'block');
+        $('.navigation-site .back_to_ui_kit').css('display', 'block');//ワンカラムなので空ではなくblock
+        $('.navigation-site .menu__ul').css('display', 'block');
         open = true;
         console.log('開いた！true');
       } else {
-        $('.navigation .back_to_ui_kit').css('display', 'none');
-        $('.navigation .menu__ul').css('display', 'none');
+        $('.navigation-site .back_to_ui_kit').css('display', 'none');
+        $('.navigation-site .menu__ul').css('display', 'none');
         //$('.navigation .back_to_ui_kit').addClass('display_n');
         //$('.navigation .menu__ul').addClass('display_n');
         open = false;
@@ -124,6 +124,9 @@
       }
 
     });
+    function openMenu() {
+      console.log('メヌーオープン')
+    }
 
     ///マウスカーソルがメニュー上/メニュー外判定
     //-------------------------------------------------------------

@@ -45,7 +45,8 @@ if ( ! function_exists( 'wp_dev_theme_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'common_header' => esc_html__( '共通ヘッダー', 'wp_dev_theme' ),
-    	'common_footer' => esc_html__( '共通フッター', 'wp_dev_theme' ),
+			'common_footer' => esc_html__( '共通フッター', 'wp_dev_theme' ),
+			'サンプルメニュー' => esc_html__( 'サンプル用', 'wp_dev_theme' ),
 		) );
 
 		/*
@@ -126,12 +127,13 @@ function wp_dev_theme_scripts() {
   date_default_timezone_set('Asia/Tokyo');
   $id = date("YmdHis"); ;
 
-  //CSS
+	//CSS
+	wp_enqueue_style( 'wp_dev_theme-bluma', 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css', array(), $id );
 	wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
 
   //JS
   wp_enqueue_script( 'wp_dev_theme-jquery-js', get_template_directory_uri(). '/assets/vendors/jquery/jquery-3.3.1.js', array(), $id, true);
-
+  wp_enqueue_script( 'wp_dev_theme-vue-js', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), $id, true);
   wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
     wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
 

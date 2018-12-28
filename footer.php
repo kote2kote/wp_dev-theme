@@ -10,23 +10,28 @@
  */
 
 ?>
-
-<footer class="footer">
-  <div class="container">
-    <div class="content flex">
-      <div class="copyright">
-        <small>© 2018 . All Rights Reserved.</small>
-      </div>
-      <div class="social">
-        <a href="#" class="social__icon"><span class="fab fa-facebook"></span></a>
-        <a href="#" class="social__icon"><span class="fab fa-instagram"></span></a>
-        <a href="#" class="social__icon"><span class="fab fa-twitter"></span></a>
-        <a href="#" class="social__icon"><span class="fab fa-dribbble"></span></a>
-      </div>
-    </div>
   </div>
-</footer>
+</section>
+
+<footer id="colophon" class="site-footer cm0">
+<h2 class="h2">footer.php</h2>
+		<div class="section-content site-info cm0">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'start_theme' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'start_theme' ), 'WordPress' );
+				?>
+			</a>
+			<span class="sep"> | </span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'start_theme' ), 'start_theme', '<a href="http://underscores.me/">Underscores.me</a>' );
+				?>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>

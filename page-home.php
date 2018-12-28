@@ -3,10 +3,10 @@
 	Template Name: Home Page
 */
 //get_template_part('content','hero');
-get_header(); ?>
+get_header("ui-kit"); ?>
 
 <section class="hero">
-  <div class="container">
+  <div class="Container">
 
     <div class="maintitle">
       <p class="maintitle__p">Clean and Fully Responsive Template</p>
@@ -24,7 +24,7 @@ get_header(); ?>
 </header>
 
 <section class="business_logos">
-<div class="container">
+<div class="Container">
 <ul class="business_logo flex">
   <li class=""><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img1.png" alt="logo" class=""></li>
   <li class=""><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img1.png" alt="logo" class=""></li>
@@ -36,7 +36,7 @@ get_header(); ?>
 </div>
 </section>
 <section class="js-clients u-clients">
-       <div class="u-clients__item">
+       <div class="u-clients__item cm0">
          <img class="u-clients__image" src="<?php bloginfo('stylesheet_directory');?>/assets/images/partners/img1.png" alt="Image Description">
        </div>
        <div class="u-clients__item">
@@ -62,7 +62,7 @@ get_header(); ?>
        </div>
      </section>
 <section class="whywe">
-<div class="container">
+<div class="Container">
 
 <div class="whywe__box">
   <h2>Why We?</h2>
@@ -111,7 +111,7 @@ get_header(); ?>
 </section>
 
 <section class="counts">
-<div class="container">
+<div class="Container">
 <div class="counts__elements flex">
   <div class="counts__element">
     <h5 class="count">333</h5>
@@ -134,7 +134,7 @@ get_header(); ?>
 </section>
 
 <section class="our_product">
-<div class="container">
+<div class="Container">
 <div class="content flex">
   <div class="our_product__description">
     <h2 class="title">Our Product</h2>
@@ -151,7 +151,7 @@ get_header(); ?>
 </section>
 
 <section class="our_pricing">
-<div class="container">
+<div class="Container">
 <div class="content">
 
   <div class="our_pricing__title">
@@ -251,7 +251,7 @@ get_header(); ?>
 </section>
 
 <section class="review">
-<div class="container">
+<div class="Container">
 <div class="content">
 
   <div class="review__title">
@@ -302,4 +302,4 @@ get_header(); ?>
 </div>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer("ui-kit"); ?>

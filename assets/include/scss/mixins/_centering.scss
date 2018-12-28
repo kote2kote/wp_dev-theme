@@ -18,3 +18,10 @@
     transform: translate(-50%, -50%);
   }
 }
+@mixin heroImage($height:100vh, $url:"https://via.placeholder.com/1920x1080/27709b/ffffff?text=Image") {
+  height: $height;
+  background-image: url("#{$url}");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

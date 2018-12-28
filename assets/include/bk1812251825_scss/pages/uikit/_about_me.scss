@@ -1,0 +1,80 @@
+/*============================================================================*/
+//About Me
+/*============================================================================*/
+
+.page-template-page-about-me {
+
+  .hero {
+    .container {
+      background-image: url("assets/images/1920x1080/img5.jpg");
+      //background-image: url("https://picsum.photos/1920/1080/?random");
+      min-height: 500px;
+
+      .maintitle__icon {
+        @include rem("padding", 0, 80);
+      }
+      .maintitle__p {
+        @include rem("margin-bottom", 10);
+      }
+
+      .fab {
+        color: #fff;
+      }
+    }
+  }
+
+  .person_image {
+    text-align: center;
+
+    .image {
+      transform: translate3d(0, -50%, 0);
+
+      img {
+        width: 200px;
+        border-radius: 50% !important;
+        max-width: 100%;
+        height: auto;
+        box-shadow: 0 0.4rem 2.2rem 0 rgba(27, 30, 36, 0.1);
+        border: solid 3px #fff;
+      }
+    }
+  }
+
+  .me_data {
+    @include rem("padding", 0, 0, 80, 0);
+    .title {
+      @include fz(25);
+      font-weight: 400;
+      @include rem("margin-bottom", 20);
+    }
+    .p1 {
+      @include rem("margin-bottom", 20);
+    }
+    .me_data__l {
+
+    }
+
+    .skill {
+      @include rem("margin-bottom", 10);
+    }
+    .skill_name {
+      @include fz(14);
+      @include rem("margin-bottom", 5);
+    }
+    .graph {
+      .background {
+        background-color: #F3F5F9;
+
+        .graph_main {
+          background-color: $g-primary;
+          height: 20px;
+        }
+
+        .g01 { width: 20%;}
+        .g02 { width: 80%;}
+        .g03 { width: 90%;}
+      }
+    }
+  }
+
+}

@@ -20,14 +20,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-  <!-- Web Fonts -->
-  <link href="//fonts.googleapis.com/css?family=Playfair+Display:400,700%7COpen+Sans:300,400,600,700" rel="stylesheet">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/assets/vendors/slick-carousel/slick.css">
-
 	<?php wp_head(); ?>
 
   <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -37,32 +29,57 @@
   <![endif]-->
 </head>
 
-<body id="<?php echo $slug; ?>" <?php body_class(); ?>>
+<body id="Blog" <?php body_class($slug." Blog"); ?>>
+<div id="debag" class="debag" :class="{show : show}" v-html="innerHTML"></div>
+<header class="Header cm0">
+<h2 class="h2">header.php</h2>
+  <div class="section-content cm0">
+    <h3 class="h3">wp_nav_menu(設定:function)</h3>
 
-  <header class="header">
-    <div class="container">
+  <?php
+     //管理画面でメニューを作成しfunction.phpに設定を記述。サイド管理画面で位置を決め、ここに記述
+     //ドキュメント
+     //https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/wp_nav_menu
+      wp_nav_menu( array(
+
+        'theme_location'	=> 'サンプルメニュー',//function.phpで設定したやつ
+        'container'			=> 'nav',
+        'container_class'	=> 'nav_sample lists',
+        'menu_class'		=> 'item'
+
+      ) );
+    ?>
+  </div>
+
+</header>
+<section class="MainSection cm0">
+ <div class="grid section-content">
+
+ 
+  <!-- <header class="header cm0">
+    <div class="Container">
 
       <nav class="navigation flex">
 
         <div class="logo flex">
           <div class="logo__stream">
-            <a href="<?php echo home_url(); ?>" class="logobox display_ib"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/logo-white.png" alt="Stream" class="logo_img"></a>
+            <a href="<?php //echo home_url(); ?>" class="logobox display_ib"><img src="<?php bloginfo('stylesheet_directory');?>/assets/images/logo-white.png" alt="Stream" class="logo_img"></a>
             <a href="javascript:void(0);" class="hummenu display_ib display_n"><span class="fas fa-bars"></span></a>
           </div>
           <div class="back_to_ui_kit">
-            <a href="<?php echo home_url(); ?>">Back to UI Kit</a>
+            <a href="<?php //echo home_url(); ?>">Back to UI Kit</a>
           </div>
-        </div>
+        </div> -->
 
         <?php
-          wp_nav_menu( array(
+          // wp_nav_menu( array(
 
-            'theme_location'	=> 'common_header',//function.phpで設定したやつ
-            'container'			=> 'div',
-            'container_class'	=> 'header_menu',
-            'menu_class'		=> 'menu__ul flex'
+          //   'theme_location'	=> 'common_header',//function.phpで設定したやつ
+          //   'container'			=> 'div',
+          //   'container_class'	=> 'header_menu',
+          //   'menu_class'		=> 'menu__ul flex'
 
-          ) );
+          // ) );
         ?>
 
         <!--
@@ -86,4 +103,4 @@
           </ul>
         </div> -->
 
-      </nav>
+      <!-- </nav> -->

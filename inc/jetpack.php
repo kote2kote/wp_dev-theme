@@ -17,7 +17,7 @@
 function wp_dev_theme_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
+		'Container' => 'main',
 		'render'    => 'wp_dev_theme_infinite_scroll_render',
 		'footer'    => 'page',
 	) );

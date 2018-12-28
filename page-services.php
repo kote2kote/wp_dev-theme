@@ -3,10 +3,10 @@
 	Template Name: Services Page
 */
 //get_template_part('content','hero');
-get_header(); ?>
+get_header("ui-kit"); ?>
 
 <section class="hero">
-  <div class="container">
+  <div class="Container">
 
     <div class="maintitle">
       <h1 class="maintitle__h1">Our Services</h1>
@@ -21,13 +21,13 @@ get_header(); ?>
 </header>
 
 <section class="new">
-  <div class="container">
+  <div class="Container">
     <span class="new_icon">New</span><span class="news_text">We are offering free quotation for any type of projects, request a free quote!</span>
   </div>
 </section>
 
 <section class="our_product">
-  <div class="container flex">
+  <div class="Container flex">
     <div class="our_product__description">
       <h2 class="title">Our Product</h2>
       <p class="sub_title">Convert more visitors, and win more business with Stream - UI Kit.</p>
@@ -69,12 +69,12 @@ get_header(); ?>
 
 <section class="features">
 
-  <div class="features__title container">
+  <div class="features__title Container">
     <h2 class="">Features</h2>
     <p class="">Stream creative technology company providing key digital services for everyone.</p>
   </div>
 
-  <div class="features__items container flex">
+  <div class="features__items Container flex">
     <div class="features__items-top flex">
 
       <div class="features__item">
@@ -214,4 +214,4 @@ get_header(); ?>
   <p class="branding_works__bottom-text"><a href="#">Got project? Request a free quote!</a></p>
 </section>
 
-<?php get_footer(); ?>
+<?php get_footer("ui-kit"); ?>

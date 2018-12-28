@@ -15,39 +15,48 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
-
+	<div id="primary" class="content-area col">
+		<main id="main" class="site-main cm0">
+		
 		<?php
 		if ( have_posts() ) :
-
+			?>
+			<h2 class="h2">index.php - type: <?php echo get_post_type();?></h2>
+			<?php
+			//投稿ページかつフロントページではない
+			//http://www.arttoe.net/19
 			if ( is_home() && ! is_front_page() ) :
 				?>
 				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+					<h1 class="page-title screen-reader-text h3"><?php single_post_title(); ?></h1>
 				</header>
 				<?php
 			endif;
 
 			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+			while ( have_posts() ) ://投稿がある場合
+				the_post();//次の投稿へ進める
 
 				/*
 				 * Include the Post-Type-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 * 投稿タイプを取得してコンテンツのテンプレートに渡している
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+				get_template_part( 'template-parts/content', get_post_type() );// => post()
+				
 
-			endwhile;
+			endwhile;//ここまでエントリーコンテントの繰り返し
 
+			//次のページ表示。「投稿ナビゲーション」というタイトルが勝手に入る display:noneなど使って消せる
 			the_posts_navigation();
+			echo 'or';
+			the_posts_navigation( array( 'prev_text' => '前へ', 'next_text' => '次へ' ) );
 
-		else :
+		else ://投稿がない場合
 
 			get_template_part( 'template-parts/content', 'none' );
-
+			
 		endif;
 		?>
 
@@ -57,3 +66,4 @@ get_header();
 <?php
 get_sidebar();
 get_footer();
+?>

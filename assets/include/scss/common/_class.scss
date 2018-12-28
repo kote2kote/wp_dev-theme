@@ -1,0 +1,110 @@
+/*==========================================================
+margin padding set
+===========================================================*/
+// padding and margin 1-10
+$every: 1;
+@for $i from 0 through 10 {
+    .pd#{$i * $every} {
+      @include rem("padding", $i * $every);
+    }
+    .pd-t#{$i * $every} {
+      @include rem("padding-top", $i * $every);
+    }
+    .pd-b#{$i * $every} {
+      @include rem("padding-bottom", $i * $every);
+    }
+    .pd-l#{$i * $every} {
+      @include rem("padding-left", $i * $every);
+    }
+    .pd-r#{$i * $every} {
+      @include rem("padding-right", $i * $every);
+    }
+    .mg#{$i * $every} {
+      @include rem("margin", $i * $every);
+    }
+    .mg-t#{$i * $every} {
+      @include rem("margin-top", $i * $every);
+    }
+    .mg-b#{$i * $every} {
+      @include rem("margin-bottom", $i * $every);
+    }
+    .mg-l#{$i * $every} {
+      @include rem("margin-left", $i * $every);
+    }
+    .mg-r#{$i * $every} {
+      @include rem("margin-right", $i * $every);
+    }
+  }
+  
+// padding and margin 0,5,10,15, ...50
+$every: 5;
+@for $i from 0 through 10 {
+    .pd#{$i * $every} {
+      @include rem("padding", $i * $every);
+    }
+    .pd-t#{$i * $every} {
+      @include rem("padding-top", $i * $every);
+    }
+    .pd-b#{$i * $every} {
+      @include rem("padding-bottom", $i * $every);
+    }
+    .pd-l#{$i * $every} {
+      @include rem("padding-left", $i * $every);
+    }
+    .pd-r#{$i * $every} {
+      @include rem("padding-right", $i * $every);
+    }
+    .mg#{$i * $every} {
+      @include rem("margin", $i * $every);
+    }
+    .mg-t#{$i * $every} {
+      @include rem("margin-top", $i * $every);
+    }
+    .mg-b#{$i * $every} {
+      @include rem("margin-bottom", $i * $every);
+    }
+    .mg-l#{$i * $every} {
+      @include rem("margin-left", $i * $every);
+    }
+    .mg-r#{$i * $every} {
+      @include rem("margin-right", $i * $every);
+    }
+  }
+  
+/*==========================================================
+align
+===========================================================*/
+.align-center {text-align: center;}
+.align-left {text-align: left;}
+.align-right {text-align: right;}
+
+/*==========================================================
+flexbox
+===========================================================*/
+.flex {display:flex;}
+.flex-justify-center {justify-content: center;}
+.flex-justify-sb {justify-content: space-between;}
+.flex-align-c {align-items: center;}
+.flex-wrap {flex-wrap: wrap;}
+.flex-nowrap {flex-wrap: nowrap;}
+.d-b {display: block;}
+.d-ib {display: inline-block;}
+
+/*==========================================================
+debag
+===========================================================*/
+.debag {
+  position: fixed;
+  visibility:hidden;
+  padding: 10px;
+  background-color: #FF3266;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: #fff 1px solid;
+  //border-bottom: #FF3266 1px solid;
+}
+.show {
+  visibility: visible;
+  color: #fff;
+}

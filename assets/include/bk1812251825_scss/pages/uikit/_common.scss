@@ -1,0 +1,139 @@
+/*--------------------------------------------------------------
+## Home
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*--------------------------------------------------------------
+## Commons
+--------------------------------------------------------------*/
+.navigation_on_bg {
+  background-color: #59287A;
+}
+
+.section-title-box {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  @include rem("margin-bottom", 50);
+  .title {
+    @include fz(40);
+    font-weight: 500;
+  }
+  .text {
+    @include fz(20);
+  }
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.display_n {
+  display: none;
+}
+
+/*----------------------------------
+  Box Shadow
+------------------------------------*/
+.u-box-shadow-sm {
+  box-shadow: 0 0.2rem 1.25rem 0 rgba(27, 30, 36, 0.07);
+}
+
+.u-box-shadow-lg {
+  box-shadow: 0 0.4rem 2.2rem 0 rgba(27, 30, 36, 0.1);
+}
+
+
+/*--------------------------------------------------------------
+## Common Contents Parts
+--------------------------------------------------------------*/
+
+.branding_works {
+  @include rem("padding", 50, 0, 100, 0);
+
+  &__title {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+
+    h2 {
+      font-weight: 500;
+      @include fz(40);
+    }
+    p {
+      @include fz(20);
+    }
+  }
+
+  &__gallery-category {
+    justify-content: center;
+    margin: 0 auto;
+    @include rem("margin-top", 40);
+    @include rem("margin-bottom", 30);
+  }
+  &__gallery-menu {
+    display: inline-block;
+    &:not(:last-child)::after {
+      content: "|";
+      font-size: 0.71429rem;
+      margin: 0 4px;
+      position: relative;
+      top: -2px;
+      line-height: inherit;
+      display: inline-block;
+      vertical-align: middle;
+      // color: transparent;
+      color: #d5d7dc;
+      margin: 0 7px 0 12px;
+    }
+
+  }
+
+  &__gallery-box {
+    margin: 0 auto;
+    width: 1200px;
+    flex-wrap: wrap;
+
+    figure {
+      margin: 0;
+    }
+
+  }
+
+  &__gallery-item {
+    flex: 0 0 33.3%;
+    max-width: 33.3%;//IE11対策
+    margin: 0;
+
+  }
+
+}
+
+.branding_works__partners-logo {
+
+  ul.partners-logo {
+    margin: 0;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .partners-logo > li {
+    flex: 1;
+    @include rem("padding", 40, 0, 10, 0);
+
+
+    img {
+      width: 120px;
+      margin: 0 auto;
+      display: block;
+      filter: grayscale(100%);//IEは効かない。後回し
+      @include opacity(0.3);
+     }
+
+    }
+}
+
+.branding_works__bottom-text {
+  text-align: center;
+}

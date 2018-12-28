@@ -10,11 +10,11 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area cm0 col">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
-
+		<h2 class="h2">search.php - type: <?php echo get_post_type();?></h2>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
