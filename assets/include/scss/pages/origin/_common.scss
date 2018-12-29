@@ -1,0 +1,50 @@
+/*============================================================================*/
+//Common
+/*============================================================================*/
+.Origin {
+  #width {
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    background-color: #FF3366;
+    color: #fff;
+    z-index: 10001;
+  }
+  
+  .title {
+    @include fz(22);
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+    @include rem("padding-bottom", 7);
+    @include rem("margin-top", 20);
+    @include rem("margin-bottom", 20);
+  }
+  
+  .seibun__list {
+  
+    @include rem("margin-bottom", 30);
+    .item {
+      @include rem("padding", 10, 0);
+  
+      .seibun__name,
+      .seibun__num {
+        display: block;
+      }
+      border-left: 1px solid #333;
+  
+      img {
+        display: inline-block;
+        @include rem("margin-bottom", 5);
+      }
+      .seibun__name, .seibun__num {
+          font-weight: bold;
+      }
+      
+    }
+  
+    .item:last-child {
+      border-right: 1px solid #333;
+    }
+  
+  }
+}

@@ -2,111 +2,21 @@
 /*
 	Template Name: Test Page
 */
-//get_template_part('content','hero');
+// Custom Fields
+$test_text = get_post_meta(2186, 'test_field', true);
 get_header(); ?>
 
-<section class="sec01">
-  <div class="section-content">
-    <h2>/, /posts</h2>
-    <div class="cm0 pd5 mg-b50">
-      layout/default.vue
-
-      <div class="cm0 pd5 mg5">
-        TheHeader
-
-        <div class="cm0 pd5 mg5">
-          TheSideNavToggle
-        </div>
-      </div>
-
-      <div class="cm0 pd5 mg5">
-        TheSidenav
-      </div>
-
-      <div class="cm0 pd5 mg5">
-        nuxt:PostList
-
-        <div class="cm0 pd5 mg5">
-          PostPreview
-        </div>
-      </div>
-
-    </div>
-
-    <h2>/posts/id</h2>
-    <div class="cm0 pd5 mg-b50">
-      layout/default.vue
-
-      <div class="cm0 pd5 mg5">
-        TheHeader
-
-        <div class="cm0 pd5 mg5">
-          TheSideNavToggle
-        </div>
-      </div>
-
-      <div class="cm0 pd5 mg5">
-        TheSidenav
-      </div>
-
-      <div class="cm0 pd5 mg5">
-        nuxt:this
-      </div>
-
-    </div>
-
-    <h2>/admin</h2>
-    <div class="cm0 pd5 mg-b50">
-      layout/admin.vue
-
-      <div class="cm0 pd5 mg5">
-        AppButton
-      </div>
-
-      <div class="cm0 pd5 mg5">
-        nuxt:PostList
-
-        <div class="cm0 pd5 mg5">
-          PostPreview
-        </div>
-      </div>
-
-    </div>
-
-    <h2>/admin/new-post, /admin/postid</h2>
-    <div class="cm0 pd5 mg-b50">
-      layout/admin.vue
-
-      <div class="cm0 pd5 mg5">
-        nuxt:AdminPostForm
-
-        <div class="cm0 pd5 mg5">
-          AppControlInput
-        </div>
-
-        <div class="cm0 pd5 mg5">
-          AppButton
-        </div>
-      </div>
-
-    </div>
-
-    <h2>/admin/auth</h2>
-    <div class="cm0 pd5 mg-b50">
-      layout/admin.vue
-
-      <div class="cm0 pd5 mg5">
-        nuxt
-        <div class="cm0 pd5 mg5">
-          AppControlInput
-        </div>
-
-        <div class="cm0 pd5 mg5">
-          AppButton
-        </div>
-      </div>
-    </div>
-
+<section class="Test content-area cm0 col">
+  <h2 class="h2">page-test.php</h2>
+  <div class="inner cm0">
+    <h3 class="h3">page-test.php</h3>
+    <?php the_title(); ?>
+    <h3 class="h3">Custom Fields</h3>
+    $test_text = get_post_meta(2186, 'test_field', true)
+     => <?php echo $test_text; ?>
+  </div>
 </section>
 
-<?php get_footer(); ?>
+<?php
+get_sidebar();
+get_footer();

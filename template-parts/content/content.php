@@ -10,7 +10,7 @@
 ?>
 <!--エントリー-->
 <article id="post-<?php the_ID(); ?>" <?php post_class("cm0 mg-t50"); ?>>
-<h2 class="h2">template-parts/content.php</h2>
+<h2 class="h2">template-parts/content/content.php</h2>
 <!--ヘッダー-->
 	<header class="entry-header">
 		<?php

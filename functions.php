@@ -34,19 +34,24 @@ if ( ! function_exists( 'wp_dev_theme_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
-
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		// function add_thumbnail_size() {
+		// 	add_theme_support( 'post-thumbnails' );
+		// 	add_image_size('test_100x100', 100, 100, true);
+		// }
+		// add_action( 'after_setup_theme', 'add_thumbnail_size' );
+		add_image_size('test_100x100', 100, 100, true);
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'common_header' => esc_html__( '共通ヘッダー', 'wp_dev_theme' ),
 			'common_footer' => esc_html__( '共通フッター', 'wp_dev_theme' ),
-			'サンプルメニュー' => esc_html__( 'サンプル用', 'wp_dev_theme' ),
+			'sample_menu' => esc_html__( 'サンプル用', 'wp_dev_theme' ),
 		) );
 
 		/*
@@ -83,7 +88,9 @@ if ( ! function_exists( 'wp_dev_theme_setup' ) ) :
 		) );
 	}
 endif;
+
 add_action( 'after_setup_theme', 'wp_dev_theme_setup' );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

@@ -98,13 +98,22 @@ debag
   visibility:hidden;
   padding: 10px;
   background-color: #FF3266;
+  opacity: .9;
   top: 0;
   left: 0;
   width: 100%;
+  height: 0;
   border-bottom: #fff 1px solid;
   //border-bottom: #FF3266 1px solid;
+  overflow: scroll;
+  transition: all .1s ease-in;
+  a:link {
+    color: rgb(224, 255, 88);
+  }
+
 }
 .show {
   visibility: visible;
   color: #fff;
+  height: 50%;
 }

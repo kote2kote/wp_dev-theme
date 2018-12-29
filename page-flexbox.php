@@ -4,7 +4,7 @@
 */
 //get_template_part('content','hero');
 get_header("ui-kit"); ?>
-<section class="hero">
+<section class="Hero">
   <div class="Container">
 
     <div class="maintitle">

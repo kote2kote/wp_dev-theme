@@ -30,7 +30,56 @@
 </head>
 
 <body id="Blog" <?php body_class($slug." Blog"); ?>>
-<div id="debag" class="debag" :class="{show : show}" v-html="innerHTML"></div>
+
+<!--debag code-->
+<div id="debag" class="debag" :class="{show : show}">
+<div v-html="innerHTML"></div>
+<div class="grid">
+  <div class="col">
+    <ul>
+      <li>the_content(): => <?php the_content();?></li>
+      <li>the_excerpt(); => <?php the_title();?></li>
+      <li>the_permalink(); => <?php the_permalink();?></li>
+      <li>the_category(', '); => <?php the_category(', ');?></li>
+      <li>the_ID(); => <?php the_ID();?></li>
+      <li>edit_post_link(); => <?php edit_post_link();?></li>
+      <li>next_post_link(' %link '); => <?php next_post_link(' %link ');?></li>
+      <li>previous_post_link('%link'); => <?php previous_post_link('%link');?></li>
+      <li>get_links_list(); => <?php get_links_list();?></li>
+      <li>wp_list_pages(); => <?php wp_list_pages();?></li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul>
+    <li>wp_get_archives(); => <?php wp_get_archives();?></li>
+    <li>wp_list_cats(); => <?php wp_list_cats();?></li>
+
+    </ul>
+  </div>
+  <div class="col">
+    <ul>
+      <li>get_calendar(); => <?php get_calendar();?></li>
+      <li>wp_register(); => <?php wp_register();?></li>
+      <li>wp_loginout(); => <?php wp_loginout();?></li>
+    </ul>
+  </div>
+  <div class="col">
+    <ul>
+      <li>site_url(); => <?php site_url();?></li>
+      <li>wp_title(); => <?php wp_title();?></li>
+      <li>bloginfo('name'); => <?php bloginfo('name');?></li>
+      <li>bloginfo('description'); => <?php bloginfo('description');?></li>
+      <li>get_stylesheet_directory_uri(); => <?php get_stylesheet_directory_uri();?></li>
+      <li>bloginfo('template_url'); => <?php bloginfo('template_url');?></li>
+      <li>bloginfo('atom_url'); => <?php bloginfo('atom_url');?></li>
+      <li>bloginfo('rss2_url'); => <?php bloginfo('rss2_url');?></li>
+    </ul>
+  </div>
+</div>
+</div>
+<!--//debag code-->
+
+<!--ここから-->
 <header class="Header cm0">
 <h2 class="h2">header.php</h2>
   <div class="section-content cm0">
@@ -42,7 +91,7 @@
      //https://wpdocs.osdn.jp/%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%E3%82%BF%E3%82%B0/wp_nav_menu
       wp_nav_menu( array(
 
-        'theme_location'	=> 'サンプルメニュー',//function.phpで設定したやつ
+        'theme_location'	=> 'sample_menu',//function.phpで設定したやつ
         'container'			=> 'nav',
         'container_class'	=> 'nav_sample lists',
         'menu_class'		=> 'item'
@@ -54,7 +103,6 @@
 </header>
 <section class="MainSection cm0">
  <div class="grid section-content">
-
  
   <!-- <header class="header cm0">
     <div class="Container">

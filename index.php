@@ -43,7 +43,9 @@ get_header();
 				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
 				 * 投稿タイプを取得してコンテンツのテンプレートに渡している
 				 */
-				get_template_part( 'template-parts/content', get_post_type() );// => post()
+				//
+				//以下テンプレートを使う
+				get_template_part( 'template-parts/content/content', get_post_type() );// => post()
 				
 
 			endwhile;//ここまでエントリーコンテントの繰り返し
@@ -55,7 +57,7 @@ get_header();
 
 		else ://投稿がない場合
 
-			get_template_part( 'template-parts/content', 'none' );
+			get_template_part( 'template-parts/content/content', 'none' );
 			
 		endif;
 		?>
