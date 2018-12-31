@@ -1,9 +1,18 @@
 <?php
-/*
-	Template Name: Origin Menu Detail
-*/
-//get_template_part('content','hero');
-get_header("origin"); ?>
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package origin
+ */
+
+get_header("origin");
+
+while ( have_posts() ) :
+	the_post();
+	//the_post_navigation();
+?>
 <section class="breadcrumb">
   <div class="section-content flex">
     <ul class="breadcrumb__menu_list flex">
@@ -19,15 +28,15 @@ get_header("origin"); ?>
   <div class="section-content">
     <div class="container">
     <figure>
-      <img src="https://placehold.jp/900x600.png" alt="">
+		<?php wp_dev_theme_post_thumbnail(); ?>
     </figure>
     <span class="num">106429</span>
 
     <div class="detail_info">
-      <h3 class="detail_info__name">Ｄｘ粒マスタードチーズハンバーグ弁当</h3>
+      <h3 class="detail_info__name"><?php the_title(); ?></h3>
       <div class="line cm0"></div>
-      <span class="detail_info__kakaku">本体価格 : 741円/1個</span>
-      <span class="detail_info__zeikomi">(税込 : 800円/1個)</span>
+      <span class="detail_info__kakaku"><?php echo get_post_meta($post->ID , 'kakaku_hontai' ,true); ?></span>
+      <span class="detail_info__zeikomi"><?php echo get_post_meta($post->ID , 'kakaku_zeikomi' ,true); ?></span>
     </div>
 
     <div class="social_btn flex">
@@ -163,4 +172,29 @@ get_header("origin"); ?>
     </div>
   </div>
 </section>
-<?php get_footer("origin"); ?>
+<?php endwhile; ?>
+	<!-- <div id="primary" class="content-area">
+		<main id="main" class="site-main"> -->
+
+		<?php
+		// while ( have_posts() ) :
+		// 	the_post();
+
+		// 	get_template_part( 'template-parts/content', get_post_type() );
+
+		// 	the_post_navigation();
+
+		// 	// If comments are open or we have at least one comment, load up the comment template.
+		// 	if ( comments_open() || get_comments_number() ) :
+		// 		comments_template();
+		// 	endif;
+
+		// endwhile; // End of the loop.
+		?>
+
+	<!-- 	</main> #main
+	</div>#primary-->
+
+<?php
+//get_sidebar();
+get_footer("origin");
