@@ -1,4 +1,100 @@
 @import "common";
-#Hohoemi {
+#hohoemi {
+
+  .Header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $g-theme-color-06;
+    @include rem("height", 230)
+
+    .inner {
+      @include rem("padding", 30, 20, 0 20);
+    }
+
+    .sub-inner__l {
+      figure {
+        .mini-logo {
+          @include rem("width", 55)
+        }
+      }
+    }
+
+    .sub-inner__c {
+      figure {
+        .logo {
+          @include rem("width", 404)
+        }
+      }
+
+      picture {
+
+       & * {
+          @include rem("width", 404)
+        }
+      }
+      
+    }
+
+    .sub-inner__r {
+
+      .inner {
+        padding: 0;
+
+        & > * {
+          display: inline-block;
+          @include rem("height", 50);
+          @include rem("margin-left", 20)
+        }
+        .fa-search, .fa-facebook-f {
+          @include rem("padding", 10);
+          @include fz(30);
+        }
+        .space {
+          @include rem("width", 2);
+          background-color: rgb(194, 194, 194);
+          @include rem("margin-top", auto);
+          @include rem("margin-bottom", auto);
+          @include rem("height", 30)
+        }
+        .fa-search, .button {
+          color: $g-theme-color-06;
+          background-color: $g-theme-color-01;
+        }
+        .button {
+          @include fz(18);
+          @include rem("padding", 10);
+        }
+        .fa-facebook-f {
+          color: $g-theme-color-01;
+          background-color: $g-theme-color-06;
+        }
+      }
+    }
+
+    .global-nav {
+      @include rem("margin-top", 30)
+    }
+    .global-nav__list {
+      @include rem("margin", 0, 10);
+      a:link {
+        color: $g-theme-color-03;
+        @include rem("padding", 0, 40);
+      }
+
+      .far {
+        @include fz(40);
+        color: $g-theme-color-01;
+      }
+
+      span {
+        //@include fz(40);
+        font-weight: bold;
+      }
+    }
+
+    
+  }
   
 }

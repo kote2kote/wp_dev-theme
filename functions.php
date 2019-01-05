@@ -142,10 +142,10 @@ function wp_dev_theme_scripts() {
   wp_enqueue_script( 'wp_dev_theme-jquery-js', get_template_directory_uri(). '/assets/vendors/jquery/jquery-3.3.1.js', array(), $id, true);
   wp_enqueue_script( 'wp_dev_theme-vue-js', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), $id, true);
   wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
-    wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
-
-  wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
-
+  wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
+	if ( !is_page( 'hohoemi' ) ):
+	wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
+endif;
 	wp_enqueue_script( 'wp_dev_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $id, true );
 
 	wp_enqueue_script( 'wp_dev_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $id, true );

@@ -1,0 +1,43 @@
+// Theme Colors
+$g-theme-color-01:                                               #E61A0E;//theme
+$g-theme-color-02:                                               #EE2E21;//logo
+$g-theme-color-03:                                               #333333;//font
+$g-theme-color-04:                                               #F3F6F9;//bgA
+$g-theme-color-05:                                               #FDF8F0;//bgB
+$g-theme-color-06:                                               #FFFFFF;//bgC
+
+// Font Colors
+$g-font-color:                                                   $g-theme-color-03;
+$g-bg-color:                                                     $g-theme-color-06;
+
+// Links (Style anchor elements)
+$g-link-color:                                                   $g-theme-color-01;
+$g-link-color-hover:                                             $g-theme-color-01;
+
+body {
+  color: $g-font-color;
+  background-color: $g-bg-color;
+}
+
+a {
+  color: $g-link-color;
+
+  &:hover {
+    color: $g-link-color-hover;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.is_theme01 {
+  background-color: $g-theme-color-01;
+  color: $g-theme-color-06;
+}
+
+a:hover {
+  opacity: 0.3;
+  transition: all .3s;
+}
