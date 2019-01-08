@@ -136,6 +136,12 @@ function wp_dev_theme_scripts() {
 
 	//CSS
 	wp_enqueue_style( 'wp_dev_theme-bluma', 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css', array(), $id );
+
+	if(is_page("hohoemi")) {
+		wp_enqueue_style( 'wp_dev_theme-style', get_template_directory_uri() . '/hohoemi_style.css', array(), $id );
+	} else {
+    wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
+	}
 	wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
 
   //JS
@@ -143,9 +149,13 @@ function wp_dev_theme_scripts() {
   wp_enqueue_script( 'wp_dev_theme-vue-js', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), $id, true);
   wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
   wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
-	if ( !is_page( 'hohoemi' ) ):
-	wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
-endif;
+
+  if(is_page("hohoemi")) {
+		wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/hohoemi.min.js', array(), $id, true);
+	} else {
+		wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
+	}
+
 	wp_enqueue_script( 'wp_dev_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $id, true );
 
 	wp_enqueue_script( 'wp_dev_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), $id, true );

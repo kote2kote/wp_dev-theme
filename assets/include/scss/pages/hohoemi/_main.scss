@@ -1,13 +1,28 @@
 @import "common";
+
 #hohoemi {
 
   .Header {
+    transition: all .3s;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: $g-theme-color-06;
-    @include rem("height", 230)
+    opacity: 1;
+    @include rem("height", 230);
+    z-index: 10000;
+
+    // &:before {
+    //   content: "";
+    //   display: block;
+    //   padding-top: 60%; /* 1:1 */
+    // }
+
+    &.js-scroll {
+      @include rem("height", 180);
+      opacity: .95;
+    }
 
     .inner {
       @include rem("padding", 30, 20, 0 20);
@@ -16,24 +31,27 @@
     .sub-inner__l {
       figure {
         .mini-logo {
-          @include rem("width", 55)
+          transition: all .3s;
+          @include rem("width", 55);
+          &.js-scroll {
+            @include rem("width", 30);
+          }
         }
       }
     }
 
     .sub-inner__c {
-      figure {
-        .logo {
-          @include rem("width", 404)
-        }
-      }
-
       picture {
-
        & * {
-          @include rem("width", 404)
+          transition: all .3s;
+          @include rem("width", 404);
         }
       }
+      picture.js-scroll {
+        & * {
+           @include rem("width", 300)
+         }
+       }
       
     }
 
@@ -79,22 +97,76 @@
     .global-nav__list {
       @include rem("margin", 0, 10);
       a:link {
+        //transition: all .3s;
         color: $g-theme-color-03;
         @include rem("padding", 0, 40);
+        &.js-scroll {
+          display: flex;
+          align-items: center;
+          @include rem("padding", 0, 20);
+        }
       }
 
       .far {
+        transition: all .3s;
         @include fz(40);
         color: $g-theme-color-01;
+        &.js-scroll {
+          //transition: all .3s;
+          @include fz(30);
+          @include rem("margin-right", 10);
+        }
       }
 
       span {
         //@include fz(40);
+        transition: all .3s;
         font-weight: bold;
+        &.js-scroll {
+          @include fz(13);
+          display: inline-block;
+        }
       }
     }
 
     
+  }
+
+  .space {
+    @include rem("height", 230)
+  }
+
+  .Hero {
+    @include rem("padding", 40, 0);
+    background-color: #FCF8F1;
+    .carousel {
+      @include rem("width", 10000);
+      //transform: translateX(-4000px)
+      
+    }
+    .carousel__inner {
+        overflow: hidden;
+        white-space: nowrap;
+        //@include rem("width", 1280);
+        margin-left: auto;
+        margin-right: auto;
+        display: inline-block;
+      .pic {
+        display: inline-block;
+      }
+
+      img {
+        @include rem("width", 640);
+        @include rem("height", 390);
+        @include rem("margin", 0, 10);
+      }
+    }
+
+    .slide_marker {
+      .now {
+        color: $g-theme-color-01;
+      }
+    }
   }
   
 }

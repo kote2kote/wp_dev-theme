@@ -28,16 +28,16 @@
 <body id="<?php echo $slug; ?>" <?php body_class($slug." Hohoemi"); ?>>
 
 
-<header id="hohoemi-Header" v-scroll="handleScroll" class="Header">
+<header id="hohoemi-Header" v-scroll="handleScroll"  class="Header" :class="{'js-scroll' : js_scroll}">
 	<div class="inner grid">
 		<div class="sub-inner__l col">
-			<figure><img src="https://via.placeholder.com/55x56/EE2E21/ffffff?text=logo" alt="" class="mini-logo d-ib"></figure>
+			<figure><img src="https://via.placeholder.com/55x56/EE2E21/ffffff?text=logo" alt="" class="mini-logo d-ib" :class="{'js-scroll' : js_scroll}"></figure>
 		</div>
 
 		<div class="sub-inner__c align-center">
 			<!-- <figure class="align-center cm0"><img src="https://via.placeholder.com/1920x680/E61A0E/ffffff?text=logo" alt="" class="logo d-ib"></figure> -->
 			<a href="#" class="d-ib">
-				<picture class="align-center">
+				<picture class="align-center" :class="{'js-scroll' : js_scroll}">
 					<source media="(max-width:768px)" srcset="https://www.nichireifoods.co.jp/media/wp-content/themes/nichireifoods_media/assets/images/common/logo_sp.svg">
 					<source media="(min-width:768px)" srcset="https://www.nichireifoods.co.jp/media/wp-content/themes/nichireifoods_media/assets/images/common/logo_pc.svg">
 					<img src="https://www.nichireifoods.co.jp/media/wp-content/themes/nichireifoods_media/assets/images/common/logo_pc.svg" alt="冷凍で食を豊かに ほほえみごはん">
@@ -59,26 +59,23 @@
 
 	<nav class="global-nav">
 				<ul class="global-nav__lists grid flex-justify-center align-center">
-					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+				<li class="global-nav__list">
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
-					</li>
-					<li class="global-nav__list">
-						<a href="#" class="d-b"><i class="far fa-grin-tongue-squint d-b"></i><span class="d-b">食材の冷凍<span></a>
+						<a href="#" class="d-b" :class="{'js-scroll' : js_scroll}"><i class="far fa-grin-tongue-squint d-b" :class="{'js-scroll' : js_scroll}"></i><span class="d-b" :class="{'js-scroll' : js_scroll}">食材の肉食！<span></a>
 					</li>
 				</ul>
 			</nav>
