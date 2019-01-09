@@ -2,6 +2,14 @@
 
 import "babel-polyfill";
 
+/*mixiのテスト*/
+import {myMixin} from './mixin.js'
+
+const Component = Vue.extend({
+  mixins: [myMixin]
+})
+const component = new Component() // => "hello from mixin!"
+
 /*==========================================================
 ほほえみごはん
 ===========================================================*/
@@ -48,10 +56,17 @@ new Vue ({
 })
 Vue.directive ('slide',{
   inserted: function(el, binding, evt) {
-       binding.value(el, evt)
-      // let f = (evt) => {
+    binding.value(el, evt)
+  }
+})
 
-      // }
+Vue.directive ('slide_stop',{
+  inserted: function(el, binding, evt) {
+
+    let f = function(el) {
+      binding.value(el, evt)
+    }
+    window.addEventListener('mouseover', f)
   }
 })
 
@@ -127,7 +142,9 @@ new Vue({
       pics_margin: 10,
       positionX: 0,
       now: false,
-      slideActive: 0
+      slideActive: 0,
+      fl_slideStop: null
+
 
     },
     computed: {
@@ -166,7 +183,7 @@ new Vue({
             //slide marker
             if(this.slideActive === Object.keys(pics).length) {this.slideActive = 0}
             this.slideActive += 1
-            console.log(this.slideActive)
+            //console.log(this.slideActive)
             
 
             //console.log(Object.keys(pics).length)
@@ -187,7 +204,7 @@ new Vue({
               } else {
                 pics[k].positionX -= this.picsWidthIncludeMargin
                 pics[k].setAttribute("style", `transition: all .5s; transform: translateX(${pics[k].positionX}px)`)
-                console.log(pics[k])
+                //console.log(pics[k])
               }
             }
 
@@ -205,11 +222,30 @@ new Vue({
             let defaultPosition = -(CarouselInnerWidth - browserHalfWidth)
             el.setAttribute("style", `transform: translateX(${defaultPosition}px)`)
           }
-          setInterval(slideMain, 2000)
+
+          //マウスオーバー、アウトでスライドonoff
+          let slideStop = () => {
+            clearInterval(this.fl_slideStop)
+          }
+          let slideStart = () => {
+            this.fl_slideStop = setInterval(slideMain, 2000)
+          }
+
+          el.parentNode.addEventListener('mouseover', slideStop) //バナーにマウスオーバーでスライドストップ
+          el.parentNode.addEventListener('mouseout', slideStart) //バナーにマウスアウトでスライド再開
+
+          this.fl_slideStop = setInterval(slideMain, 2000)
           setInterval(centering, 100)
+
+          
         }
         main(parentPicsElm.children)
         
       },
+      slideStop(el, evt) {
+        //console.log(this.slideStop)
+        //clearInterval(this.slideStop)
+      }
     },
 })
+

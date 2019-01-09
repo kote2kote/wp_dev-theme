@@ -9,7 +9,7 @@ get_header("hohoemi"); ?>
 	<div class="inner">
 
 		<!--カルーセル-->
-		<div id="pic" class="carousel align-center cm0" v-slide="slide">
+		<div id="pic" class="carousel align-center cm0" v-slide="slide" v-slide_stop="slideStop">
 			<div class="carousel__inner">
 				<div class="pic" v-for="pic in pics" :key="pic.id">
 						<a :href="pic.link" class="">
