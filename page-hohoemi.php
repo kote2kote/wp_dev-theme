@@ -9,8 +9,9 @@ get_header("hohoemi"); ?>
 	<div class="inner">
 
 		<!--カルーセル-->
-		<div id="pic" class="carousel align-center cm0" v-slide="slide" v-slide_stop="slideStop">
+		<div id="pic" class="carousel align-center" v-slide="slide" v-slide_stop="slideStop">
 			<div class="carousel__inner">
+
 				<div class="pic" v-for="pic in pics" :key="pic.id">
 						<a :href="pic.link" class="">
 							<figure>
@@ -22,8 +23,16 @@ get_header("hohoemi"); ?>
 						</a>
 					</div>
 			</div>
+
+			<div class="slide_direction_btn grid">
+				<div class="col grid flex-justify-sb">
+					<span class="left_btn d-ib"><a href="#"><i class="fas fa-angle-left"></i></a></span>
+					<span class="right_btn d-ib"><a href="#"><i class="fas fa-angle-right"></i></a></span>
+				</div>
+			</div>
+
 			<div class="slide_marker">
-				<span v-for="pic in pics" :key="pic.id" :class="{'now' : slideActive === pic.id}">●</span>
+				<span class="marker_btn d-ib" v-for="pic in pics" :key="pic.id" :class="{'now' : slideActive === pic.id}"><a href="#">●</a></span>
 			</div>
 		</div>
 	</div>

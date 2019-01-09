@@ -150,6 +150,7 @@
         //@include rem("width", 1280);
         margin-left: auto;
         margin-right: auto;
+        position: relative;
         display: inline-block;
       .pic {
         display: inline-block;
@@ -162,9 +163,38 @@
       }
     }
 
+    .slide_direction_btn {
+      @include rem("width", 620);
+      position: absolute;
+      top: 180px;
+      left: 50%;
+      transform: translateX(-310px);
+      margin-left: auto;
+      margin-right: auto;
+
+      .left_btn, .right_btn {
+        //@include rem("padding", 10);
+        @include rem("width", 50);
+        @include rem("height", 50);
+        @include fz(30);
+        border-radius: 50%;
+        background-color: #fff;
+        opacity: 0.9;
+      }
+    }
+
     .slide_marker {
+      a:link {
+        color: $g-theme-color-03;
+      }
       .now {
-        color: $g-theme-color-01;
+        a:link {
+          color: $g-theme-color-01;
+        }
+      }
+      .marker_btn {
+        @include rem("width", 20);
+        @include rem("height", 20);
       }
     }
   }
