@@ -26,13 +26,13 @@ get_header("hohoemi"); ?>
 
 			<div class="slide_direction_btn grid">
 				<div class="col grid flex-justify-sb">
-				<a href="#" class="left_btn d-ib"><i class="fas fa-angle-left"></i></a>
-				<a href="#" class="right_btn d-ib"><i class="fas fa-angle-right"></i></a>
+				<a class="left_btn d-ib"><i class="fas fa-angle-left"></i></a>
+				<a class="right_btn d-ib"><i class="fas fa-angle-right"></i></a>
 				</div>
 			</div>
 
 			<div class="slide_marker">
-				<span class="marker_btn d-ib" v-for="pic in pics" :key="pic.id" :class="{'now' : slideActive === pic.id}"><a href="#">●</a></span>
+				<a href="#" class="marker_btn d-ib" v-for="pic in pics" :data-key="pic.id" :key="pic.id" :class="{'now' : slideActive === pic.id}">●</a>
 			</div>
 		</div>
 	</div>

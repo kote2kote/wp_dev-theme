@@ -141,12 +141,13 @@ new Vue({
       pics_width: 640,
       pics_margin: 10,
       positionX: 0,
-      slideDirection: -1,
+      defaultDirection: 1,
       now: false,
       slideActive: 0,
       fl_slideStop: null,
       flg_default: true,
       slidePositionArray: [],
+      goLeftorRight: false,
     },
     computed: {
       elNum() { //画像の個数
@@ -161,11 +162,12 @@ new Vue({
     },
     methods: {
       slide(el, evt) {
-        //this.slideDirection = 1
+        //slideDirection = 1
         let parentPicsElm = el.querySelector('.carousel__inner') //画像のエレメントを格elmに格納
         let parentMarkerElm = el.querySelector('.slide_marker') //現在のスライド位置マーカー用
         let slideLeft = el.querySelector('.left_btn')
         let slideRight = el.querySelector('.right_btn')
+        let slideMarker = Array.from(document.querySelectorAll('.marker_btn'));
         
         
         //slide実施
@@ -173,55 +175,45 @@ new Vue({
 
           //slide個別の位置
           let limit= []
+          let slideDirection = this.defaultDirection
           // let matrix_test = []
           // let positionMatrix = []
 
           for (let i= 0; i < this.elNum; i++) {
-            limit[i] = this.slideDirection * this.picsWidthIncludeMargin * (i + 1)
-            console.log(limit[i])
+            limit[i] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
+            //console.log(limit[i])
           }
 
+          if(this.defaultDirection === 1) {
+            //this.goLeftorRight = true
+            limit.reverse()
+            //this.goLeftorRight = false
+          }
+          
+          console.log("最初のリミット---------------------------")
+          console.log(limit)
+          
+         // this.limitPoint = limit.concat()
 
-          // for(let k = 0; k < Object.keys(pics).length; k++) {
-          //   let x
-          //   for (let i= 0; i < this.elNum; i++) {
-          //     //let ii = 0
-          //     //console.log("k: " + k + " i: " + i)
-          //     if(i === k) {
-          //       if(i === 0) {
-          //         matrix_test[i] = this.slideDirection * (this.picsWidthIncludeMargin * (i + 1))
-          //       } else {
-          //         matrix_test[i] = this.slideDirection * (this.allWidth - this.picsWidthIncludeMargin)
-          //       }
-          //     } else {
-          //       matrix_test[i] += this.slideDirection * this.picsWidthIncludeMargin
-          //     }
-          //     //console.log("matrix_test[i]" + matrix_test[i])
-          //     //ii++
-          //   }
-          //   positionMatrix[k] = matrix_test
-          //   //console.log(k + ": " + positionMatrix[k])
-          // }
-    
-          //console.log(limit)
           // let flagStart = true //初回かどうか
           let ImgSwitch = false
+          let lkk = 0
+          let rkk = 0
+
+          //let demo_kk = 0
           
           
           //   console.log(limit)
           let slideMain = () => {
-           
-            // if(this.slideDirection === 1) { //右スライドの場合
-            //   limit.reverse()
-            //   ImgSwitch = true
-            //   //console.log("右方向")
-            // } else {
-            //   if(ImgSwitch === true) {
-            //     limit.reverse()
-            //     ImgSwitch = false
-            //   }
-            // }
 
+            // if(this.goLeftorRight === true) {
+            //   limit.reverse()
+            //   // limit = limit.map(function(inverted) {
+            //   //   return -inverted
+            //   // })
+            //   console.log("逆転しやした")
+            //   this.goLeftorRight = false
+            // }
             /**
              * スライドポジションマトリクス
              */
@@ -229,48 +221,60 @@ new Vue({
             //console.log(limit)
             let k = 0
             let kk = 0
-            var numbers = [1, 2, 3]
             for(let i = 0; i < this.elNum; i++) {
-              //limit[i] = this.slideDirection * this.picsWidthIncludeMargin * (i + 1)
-              if(this.slideDirection === 1) {
+              //limit[i] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
+              
+              //console.log(this.allWidth)
+              //右方向の処理
+              if(slideDirection === 1) {
+                
+                if(rkk > 0) {
+                  limit.reverse()
+                  limit = limit.map(function(inverted) {
+                    return -inverted
+                  })
+                  rkk = 0
+                }
+
+                //右方向なので使わない
+                // if(this.goLeftorRight) {
+                //   limit.reverse()
+                //   limit = limit.map(function(inverted) {
+                //     return -inverted
+                //   })
+                //   console.log("rkk: " + rkk)
+                //   console.log("右方向true")
+                // }
+                
                 if(k === 0) {
                   k = this.elNum - 1
                 } else {
                   k--
                 }
                 kk = this.elNum - 1
-                // limit.reverse()
-                // ImgSwitch = true
-                if(ImgSwitch === false) {
-                  limit.reverse()
-
-                  // limit = limit.map(function(inverted) {
-                  //   return -(invated)
-                  // })
-                  limit = limit.map(function(inverted) {
-                    return -(inverted)
-                  })
-                  console.log(limit)
-                  ImgSwitch = true
-                }
+                this.goLeftorRight = false
                 console.log("右方向→")
-                //console.log(limit)
-              } else {
-                if(ImgSwitch === true) {
+              } 
+
+              //左方向の処理
+              else {
+                
+                if(this.goLeftorRight && rkk === 0) {
                   limit.reverse()
                   limit = limit.map(function(inverted) {
-                    return -(inverted)
+                    return -inverted
                   })
-                  ImgSwitch = false
+                  rkk++
+                  console.log("左方向true")
                 }
                 k = i
+                this.goLeftorRight = false
                 console.log("←左方向")
-                //console.log(limit)
               }
               
-              //   limit[reverse] = this.slideDirection * this.picsWidthIncludeMargin * (i + 1)
+              //   limit[reverse] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
               // } else {
-              //   limit[i] = this.slideDirection * this.picsWidthIncludeMargin * (i + 1)
+              //   limit[i] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
               // }
               
 
@@ -280,16 +284,16 @@ new Vue({
               }
 
               //移動座標をプラス
-              this.slidePositionArray[k] += this.slideDirection * this.picsWidthIncludeMargin
+              this.slidePositionArray[k] += slideDirection * this.picsWidthIncludeMargin
 
               //リミットチェック
               if(limit[k] === this.slidePositionArray[k]) {
 
                 if(k === kk) {//0
-                  this.slidePositionArray[k] = -(this.slideDirection) * (this.allWidth - this.picsWidthIncludeMargin)
+                  this.slidePositionArray[k] = -(slideDirection) * (this.allWidth - this.picsWidthIncludeMargin)
                   //console.log(this.slidePositionArray[k])
                 } else {
-                  this.slidePositionArray[k] = -(this.slideDirection) * (this.allWidth - this.picsWidthIncludeMargin * (i + 1))
+                  this.slidePositionArray[k] = -(slideDirection) * (this.allWidth - this.picsWidthIncludeMargin * (i + 1))
                 }
                 //リミットからの移動はtransitionなし
                 pics[k].setAttribute("style", `transform: translateX(${this.slidePositionArray[k]}px)`)
@@ -301,14 +305,26 @@ new Vue({
               
             }
             console.log("---------------------------------------")
+            // if(slideDirection === 1) {
+
+            // }
+            // if(this.goLeftorRight) {
+            //   limit.reverse()
+            //   limit = limit.map(function(inverted) {
+            //     return -inverted
+            //   })
+            //   //this.goLeftorRight = false
+            // }
+
+            this.flg_default = false
+            slideDirection = this.defaultDirection
+            console.log(rkk)
             console.log(limit)
             console.log(this.slidePositionArray)
-            this.flg_default = false
-            //console.log(this.slidePositionArray)
 
 
 
-            // if(this.slideDirection === 1) { //右スライドの場合
+            // if(slideDirection === 1) { //右スライドの場合
             //   limit.reverse()
             //   ImgSwitch = true
             //   //console.log("右方向")
@@ -320,7 +336,7 @@ new Vue({
             // }
  
             //slide marker
-            if(this.slideDirection === -1) {
+            if(slideDirection === -1) {
               if(this.slideActive === Object.keys(pics).length) {this.slideActive = 0}
               this.slideActive += 1
             } else {
@@ -330,7 +346,7 @@ new Vue({
             
 
 
-            console.log(this.slideActive)
+            //console.log(this.slideActive)
             
 
             // //console.log(Object.keys(pics).length)
@@ -342,13 +358,13 @@ new Vue({
             //   /*先頭画像を戻す処理*/
             //   if(pics[k].positionX === limit[k]) {
             //     //スライドで移動する位置がリミットに達した時
-            //      if(pics[k].positionX === this.slideDirection * this.picsWidthIncludeMargin) {
+            //      if(pics[k].positionX === slideDirection * this.picsWidthIncludeMargin) {
 
-            //        pics[k].positionX = -(this.slideDirection) * (this.allWidth - this.picsWidthIncludeMargin * 2)
+            //        pics[k].positionX = -(slideDirection) * (this.allWidth - this.picsWidthIncludeMargin * 2)
 
             //      } else {
             //        //2つめ以降の画像の戻す座標Xをセット
-            //        pics[k].positionX -= this.slideDirection * (this.allWidth - this.picsWidthIncludeMargin)
+            //        pics[k].positionX -= slideDirection * (this.allWidth - this.picsWidthIncludeMargin)
             //      }
 
             //     pics[k].setAttribute("style", `transform: translateX(${pics[k].positionX}px)`)
@@ -357,7 +373,7 @@ new Vue({
             //     /*進める処理*/
 
             //     //リミットしてない場合は画像(+左右マージン)幅分transitionをつけて進める
-            //     pics[k].positionX += this.slideDirection * this.picsWidthIncludeMargin
+            //     pics[k].positionX += slideDirection * this.picsWidthIncludeMargin
             //     pics[k].setAttribute("style", `transition: all .5s; transform: translateX(${pics[k].positionX}px)`)
             //   }
             // }
@@ -380,16 +396,29 @@ new Vue({
             this.fl_slideStop = setInterval(slideMain, 2000)
           }
 
-          let test = () => {
-            this.slideDirection = -(this.slideDirection)
+          let slideL = () => {
+            //this.goLeftorRight = true
+            slideDirection = 1
             slideMain()
-            this.slideDirection = -(this.slideDirection)
+          }
+          let slideR = () => {
+            this.goLeftorRight = true
+            slideDirection = -1
+            slideMain()
+            slideDirection = 1
+          }
+
+          let slideMarkers = (evt) => {
+            console.log(evt)
+            console.log(evt.target.dataset.key)
           }
 
           el.parentNode.addEventListener('mouseover', slideStop) //バナーにマウスオーバーでスライドストップ
           el.parentNode.addEventListener('mouseout', slideStart) //バナーにマウスアウトでスライド再開
-          slideLeft.addEventListener('click', test)
-          slideRight.addEventListener('click', slideMain)
+          slideLeft.addEventListener('click', slideL)
+          slideRight.addEventListener('click', slideR)
+          //slideMarker.addEventListener('click', slideMarkers)
+          slideMarker.forEach(slideMarke => slideMarke.addEventListener('click', slideMarkers));
 
           this.fl_slideStop = setInterval(slideMain, 2000)
           setInterval(centering, 100)

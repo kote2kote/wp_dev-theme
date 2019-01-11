@@ -188,9 +188,7 @@
         color: $g-theme-color-03;
       }
       .now {
-        a {
           color: $g-theme-color-01;
-        }
       }
       .marker_btn {
         @include rem("width", 20);
