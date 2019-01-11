@@ -26,8 +26,8 @@ get_header("hohoemi"); ?>
 
 			<div class="slide_direction_btn grid">
 				<div class="col grid flex-justify-sb">
-					<span class="left_btn d-ib"><a href="#"><i class="fas fa-angle-left"></i></a></span>
-					<span class="right_btn d-ib"><a href="#"><i class="fas fa-angle-right"></i></a></span>
+				<a href="#" class="left_btn d-ib"><i class="fas fa-angle-left"></i></a>
+				<a href="#" class="right_btn d-ib"><i class="fas fa-angle-right"></i></a>
 				</div>
 			</div>
 

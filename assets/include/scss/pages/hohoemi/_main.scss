@@ -96,7 +96,7 @@
     }
     .global-nav__list {
       @include rem("margin", 0, 10);
-      a:link {
+      a {
         //transition: all .3s;
         color: $g-theme-color-03;
         @include rem("padding", 0, 40);
@@ -184,11 +184,11 @@
     }
 
     .slide_marker {
-      a:link {
+      a {
         color: $g-theme-color-03;
       }
       .now {
-        a:link {
+        a {
           color: $g-theme-color-01;
         }
       }
