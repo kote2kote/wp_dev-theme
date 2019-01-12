@@ -237,14 +237,14 @@ new Vue({
                 }
 
                 //右方向なので使わない
-                // if(this.goLeftorRight) {
-                //   limit.reverse()
-                //   limit = limit.map(function(inverted) {
-                //     return -inverted
-                //   })
-                //   console.log("rkk: " + rkk)
-                //   console.log("右方向true")
-                // }
+                if(this.goLeftorRight && lkk === 0) {
+                  limit.reverse()
+                  limit = limit.map(function(inverted) {
+                    return -inverted
+                  })
+                  console.log("右方向true")
+                  lkk++
+                }
                 
                 if(k === 0) {
                   k = this.elNum - 1
@@ -258,6 +258,14 @@ new Vue({
 
               //左方向の処理
               else {
+
+                if(lkk > 0) {
+                  limit.reverse()
+                  limit = limit.map(function(inverted) {
+                    return -inverted
+                  })
+                  lkk = 0
+                }
                 
                 if(this.goLeftorRight && rkk === 0) {
                   limit.reverse()
