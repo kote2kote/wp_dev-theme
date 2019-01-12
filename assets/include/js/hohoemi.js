@@ -236,15 +236,19 @@ new Vue({
                   rkk = 0
                 }
 
-                //右方向なので使わない
-                if(this.goLeftorRight && lkk === 0) {
-                  limit.reverse()
-                  limit = limit.map(function(inverted) {
-                    return -inverted
-                  })
-                  console.log("右方向true")
-                  lkk++
+                if(this.defaultDirection === -1 && lkk === 0) {
+
+                  //if(this.goLeftorRight) {
+                    limit.reverse()
+                    limit = limit.map(function(inverted) {
+                      return -inverted
+                    })
+                    console.log("右方向true")
+                    lkk++
+                 // }
+
                 }
+                
                 
                 if(k === 0) {
                   k = this.elNum - 1
@@ -252,10 +256,11 @@ new Vue({
                   k--
                 }
                 kk = this.elNum - 1
-                this.goLeftorRight = false
+                //this.goLeftorRight = false
                 console.log("右方向→")
               } 
 
+              
               //左方向の処理
               else {
 
@@ -267,19 +272,26 @@ new Vue({
                   lkk = 0
                 }
                 
-                if(this.goLeftorRight && rkk === 0) {
-                  limit.reverse()
-                  limit = limit.map(function(inverted) {
-                    return -inverted
-                  })
-                  rkk++
-                  console.log("左方向true")
+                if(this.defaultDirection === 1 && rkk === 0) {
+
+                  //if(this.goLeftorRight) {
+                    limit.reverse()
+                    limit = limit.map(function(inverted) {
+                      return -inverted
+                    })
+                    rkk++
+                    console.log("左方向true")
+                  //}
+
                 }
+                
                 k = i
-                this.goLeftorRight = false
+                //this.goLeftorRight = false
                 console.log("←左方向")
               }
-              
+              console.log("rkk" + rkk)
+              console.log("lkk" + lkk)
+              console.log(slideDirection)
               //   limit[reverse] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
               // } else {
               //   limit[i] = slideDirection * this.picsWidthIncludeMargin * (i + 1)
@@ -326,7 +338,6 @@ new Vue({
 
             this.flg_default = false
             slideDirection = this.defaultDirection
-            console.log(rkk)
             console.log(limit)
             console.log(this.slidePositionArray)
 
@@ -408,12 +419,17 @@ new Vue({
             //this.goLeftorRight = true
             slideDirection = 1
             slideMain()
+            // if(this.defaultDirection === -1){
+            //   slideDirection = -1
+            // }
           }
           let slideR = () => {
-            this.goLeftorRight = true
+            //this.goLeftorRight = true
             slideDirection = -1
             slideMain()
-            slideDirection = 1
+            // if(this.defaultDirection === 1){
+            //   slideDirection = 1
+            // }
           }
 
           let slideMarkers = (evt) => {
