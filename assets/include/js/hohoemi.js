@@ -483,25 +483,28 @@ new Vue({
              console.log("evt.target.dataset.key: " + evt.target.dataset.key)
              console.log("前this.slideActive: " + this.slideActive)
              console.log("amount: " + amount)
+             //this.slideActive = Number(evt.target.dataset.key)
             if(amount > 0) {
-              slideDirection = -1
+              
               for(let i = 0; i < amount; i++) {
+                slideDirection = -1
                 slideMain()
-                console.log("右")
               }
+              console.log("右に" + (amount) + "移動")
               //this.slideActive += amount - 1
              // this.slideActive  = evt.target.dataset.key
-              console.log("右: " + this.slideActive)
+             // console.log("右: " + this.slideActive)
             } else {
-              slideDirection = 1
+              
               for(let i = 0; i > amount; i--) {
+                slideDirection = 1
                 slideMain()
-                console.log("左")
               }
+              console.log("左に" + (amount - 2) + "移動")
               //this.slideActive = evt.target.dataset.key
-              console.log("左: " + this.slideActive)
+              //console.log("左: " + this.slideActive)
             }
-            this.slideActive = Number(evt.target.dataset.key)
+            //this.slideActive = Number(evt.target.dataset.key)
             console.log("後this.slideActive: " + this.slideActive)
             //this.slideActive += amount + 1
             //amount = Math.abs(amount)
