@@ -141,7 +141,7 @@ new Vue({
       pics_width: 640,
       pics_margin: 10,
       positionX: 0,
-      defaultDirection: 1,
+      defaultDirection: -1,
       now: false,
       slideActive: 5,
       fl_slideStop: null,
@@ -285,7 +285,7 @@ new Vue({
               } else {
                 
                  //移動
-                 pics[k].setAttribute("style", `transition: all .5s; transform: translateX(${this.slidePositionArray[k]}px)`)
+                 pics[k].setAttribute("style", `transition: all .5s; transform: translateX(${this.slidePositionArray[k]}px);`)
               }
               
               

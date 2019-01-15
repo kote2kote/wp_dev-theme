@@ -37,7 +37,48 @@ a {
   color: $g-theme-color-06;
 }
 
+.bg_brown {
+  background-color: #FCF8F1;
+}
+
 a:hover {
   opacity: 0.3;
   transition: all .3s;
+}
+
+//section title.h2
+.section-title-h2 {
+  @include rem("padding-bottom", 30);
+
+  .cmn-icon {
+    background-color: $g-theme-color-01;
+    @include rem("padding", 40);
+    @include fz(50);
+    line-height: 0;
+    color: $g-theme-color-06;
+    border-radius: 0 0 50px 0;
+    //vertical-align: middle;
+  }
+
+  .cmn-title {
+    border-bottom: 5px $g-theme-color-01 solid;
+    margin-top: auto;
+    margin-bottom: auto;
+    @include fz(30);
+    @include rem("margin-left", 20);
+    @include rem("height", 50);
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+
+  //rightレイアウト
+  &.right-layout {
+    flex-direction: row-reverse;
+    .cmn-icon {
+      border-radius: 0 0 0 50px;
+    }
+    .cmn-title {
+      @include rem("margin-right", 20);
+    }
+  }
 }

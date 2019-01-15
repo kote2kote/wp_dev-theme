@@ -36,6 +36,7 @@
 <div v-html="innerHTML"></div>
 <div class="grid">
   <div class="col">
+  
     <ul>
       <li>the_content(): => <?php the_content();?></li>
       <li>the_excerpt(); => <?php the_title();?></li>
