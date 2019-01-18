@@ -139,21 +139,28 @@ function wp_dev_theme_scripts() {
 
 	if(is_page("hohoemi")) {
 		wp_enqueue_style( 'wp_dev_theme-style', get_template_directory_uri() . '/hohoemi_style.css', array(), $id );
+	} else if(is_page("rinn")) {
+    wp_enqueue_style( 'wp_dev_theme-style', get_template_directory_uri() . '/rinn_style.css', array(), $id );
 	} else {
-    wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
+		wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
 	}
-	wp_enqueue_style( 'wp_dev_theme-style', get_stylesheet_uri(), array(), $id );
+	
 
   //JS
-  wp_enqueue_script( 'wp_dev_theme-jquery-js', get_template_directory_uri(). '/assets/vendors/jquery/jquery-3.3.1.js', array(), $id, true);
+  
   wp_enqueue_script( 'wp_dev_theme-vue-js', 'https://cdn.jsdelivr.net/npm/vue/dist/vue.js', array(), $id, true);
-  wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
-  wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
+  
 
   if(is_page("hohoemi")) {
 		wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/hohoemi.min.js', array(), $id, true);
+	} else if(is_page("rinn")) {
+		wp_enqueue_script( 'wp_dev_theme-skrollr-js', 'https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js', array(), $id, true);
+		wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/rinn.min.js', array(), $id, true);
 	} else {
+		wp_enqueue_script( 'wp_dev_theme-jquery-js', get_template_directory_uri(). '/assets/vendors/jquery/jquery-3.3.1.js', array(), $id, true);
 		wp_enqueue_script( 'wp_dev_theme-script-js', get_template_directory_uri(). '/assets/js/script.min.js', array(), $id, true);
+		wp_enqueue_script( 'wp_dev_theme-carousel-js', get_template_directory_uri(). '/assets/js/carousel.js', array(), $id, true);
+		wp_enqueue_script( 'wp_dev_theme-carousel-vendorjs', get_template_directory_uri(). '/assets/vendors/slick-carousel/slick.min.js', array(), $id, true);
 	}
 
 	wp_enqueue_script( 'wp_dev_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), $id, true );

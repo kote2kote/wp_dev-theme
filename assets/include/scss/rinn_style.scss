@@ -1,0 +1,7 @@
+@import "variables";// theme colors, font, break points etc...
+@import "mixins/main";// mixin
+@import "reset/reset";// bulma reset
+@import "common/class";// custom class
+@import "common/grid";// grid system
+
+@import "pages/rinn/main";
