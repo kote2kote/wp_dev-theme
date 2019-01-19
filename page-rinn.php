@@ -75,9 +75,13 @@
 
 <section class="Meow in">
 	<div class="inner align-center">
+
 		<h2 class="r-title d-ib"
-		data-100-bottom="transform:translate(0%,-500%);"
+		data-100-bottom="transform:translate(0%,-400%);"
 		data-600-top="transform:translate(0%, 50%);">Meow</h2>
+
+		<!-- <h2 class="r-title d-ib cm0">Meow</h2> -->
+
 		<div class="section-content grid">
 			<div class="l col">
 				<div class="inner grid flex-align-c flex-justify-c">
@@ -105,23 +109,85 @@
 		</div>
 	</div>
 </section>
-<div class="cm1000 in grid">
-<div class="col cm100"></div>
-  <div class="testtest cm200"></div>
-  <div class="col cm100"></div>
-</div>
-<div class="cm1000 in">
 
-</div>
-<div class="test in"
-data-bottom-top="background-position: 50% 100%; opacity:0;"
-data-top-bottom="background-position: 50% 20%; opacity:1;">
-</div>
-<div class="cm1000 in">
+<section class="Products in">
+	<div class="inner">
+		<!-- <div 
+		data-bottom-top="transform:translate(-50%,-400%);"
+		data-center="transform:translate(-50%,30%);"
+		class="products-title align-center cm0"> -->
+		<!-- <div 
+		class="products-title align-center cm0"
+		data-start="z-index:!-1"
+		data-bottom-top="transform:translate(-50%,0%); position: fixed; top: 50%; z-index:!1"
+		data-top="transform:translate(-50%,0%); position: fixed; top: 50%;"
+		data-center-bottom="transform:translate(-50%,0%); position: fixed; top: 0%;"
+		data--500-top="transform:translate(-50%,0%); "
 
-</div>
+		> -->
+		<!-- <div 
+		class="products-title align-center cm0"
+		data-start="z-index:!-1"
+		data-bottom-top="transform:translate(-50%,0%); position: fixed; top: 50%; z-index:!1"
+		data--80-top="transform:translate(-50%,0%); position: absolute; top: 40%;"
+		data--1500-top="transform:translate(-50%,100%); position: absolute; top: 70%;"
 
-<footer>footer</footer>
+		> -->
+		<div 
+		class="products-title align-center cm0"
+		data-start="z-index:!-1"
+		data-bottom-top="transform:translate(-50%,0%); position: fixed; top: 50%; z-index:!1"
+		data--70-top="transform:translate(-50%,0%); position: absolute; top: 40%;"
+		data--80-top="transform:translate(-50%,20%);"
+		data--1000-top="transform:translate(-50%,200%);"
+
+		>
+			<h3 class="h3">Products</h3>
+			<a href="#" class="button d-ib">More</a>
+		</div>
+		<div class="products-items section-content grid flex-justify-sb flex-wrap">
+			<a href="#" class="item d-ib">
+				<div class="photo"></div>
+				<div class="cap">
+					<h4 class="h4">Neko</h4>
+					<p>猫が透けて見える<br>美しいキャットツリー</p>
+				</div>
+				<span class="sub-cap d-ib">Modern Cat Tree</span>
+			</a>
+			<a href="#" class="item d-ib">
+			<div class="photo"></div>
+				<div class="cap">
+					<h4 class="h4">Neko</h4>
+					<p>猫が透けて見える<br>美しいキャットツリー</p>
+				</div>
+				<span class="sub-cap d-ib">Modern Cat Tree</span>
+
+			</a>
+			<a href="#" class="item d-ib">
+			<div class="photo"></div>
+				<div class="cap">
+					<h4 class="h4">Neko</h4>
+					<p>猫が透けて見える<br>美しいキャットツリー</p>
+				</div>
+				<span class="sub-cap d-ib">Modern Cat Tree</span>
+			</a>
+		</div>
+	</div>
+</section>
+<div class="cm1000 in"></div>
+<section class="h-footer in-test align-center">
+	<div class="inner">
+	<h4>MADE FOR CATS,<br>
+		DESIGNED FOR YOU.</h4>
+	</div>
+</section>
+
+
+
+
+
+
+
 <?php wp_footer(); ?>
 <script type="text/javascript">
 var s = skrollr.init({
