@@ -1,0 +1,70 @@
+// Theme Colors
+$g-theme-color-01:                                               #fff;//theme
+$g-theme-color-02:                                               #000;//logo
+$g-theme-color-03:                                               #000;//font
+// $g-theme-color-04:                                               #F3F6F9;//bgA
+// $g-theme-color-05:                                               #FDF8F0;//bgB
+// $g-theme-color-06:                                               #FFFFFF;//bgC
+
+// Font Colors
+$g-font-color:                                                   $g-theme-color-03;
+$g-bg-color:                                                     $g-theme-color-01;
+
+// Links (Style anchor elements)
+$g-link-color:                                                   $g-theme-color-03;
+$g-link-color-hover:                                             $g-theme-color-03;
+
+body {
+  color: $g-font-color;
+  background-color: $g-bg-color;
+}
+
+a {
+  color: $g-link-color;
+  text-decoration: none;
+
+  // &:hover {
+  //   color: $g-link-color-hover;
+    
+  // }
+
+  // &:focus {
+  //   outline: none;
+  // }
+}
+.debag {
+  position: fixed;
+  visibility:hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //border-bottom: #fff 1px solid;
+  z-index: 10000;
+}
+.show {
+  visibility: visible;
+  color: #fff;
+  height: 100px;
+}
+
+// $bp-xs: 0;
+// $bp-sm: 576;
+// $bp-md: 768;
+// $bp-lg: 992;
+// $bp-xl: 1200;
+
+// .section-content {
+//   margin-left: auto;
+//   margin-right: auto;
+//   max-width: bp(xl);
+
+//   @include bp(lg) {
+//       max-width: bp(lg);
+//   }
+//   @include bp() {
+//       max-width: bp();
+//   }
+//   @include bp(sm) {
+//       max-width: bp(sm);
+//   }
+// }

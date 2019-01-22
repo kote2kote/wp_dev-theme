@@ -3,7 +3,6 @@ grid system
 ===========================================================*/
 .grid {
   display: flex;
-  //flex-direction: row;
 }
 
 /* nested grids */
@@ -533,8 +532,8 @@ grid system
 .col-6-md {
   @include bp(md) {
     @include col();
-    flex-basis: 50% !important;
-    max-width: 50% !important;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 
@@ -552,8 +551,8 @@ grid system
 .col-6-lg {
   @include bp(lg) {
     @include col();
-    flex-basis: 50% !important;
-    max-width: 50% !important;
+    flex-basis: 50%;
+    max-width: 50%;
   }
 }
 
@@ -1078,8 +1077,8 @@ grid system
 
 .md-100 {
   @include bp(md) {
-    flex-basis: 100% !important;
-    max-width: 100% !important;
+    flex-basis: 100%;
+    max-width: 100%;
     margin: 0;
   }
 }
@@ -1111,17 +1110,11 @@ other class
 
   @include bp(lg) {
       max-width: bp(lg);
-      // @include rem("margin-left", 20);
-      // @include rem("margin-right", 20);
   }
   @include bp() {
       max-width: bp();
-      // @include rem("padding-left", 20);
-      // @include rem("padding-right", 20);
   }
   @include bp(sm) {
       max-width: bp(sm);
-      // @include rem("padding-left", 20);
-      // @include rem("padding-right", 20);
   }
 }

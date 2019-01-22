@@ -82,7 +82,6 @@ align
 flexbox
 ===========================================================*/
 .flex {display:flex;}
-.flex-justify-center {justify-content: center;}
 .flex-justify-sb {justify-content: space-between;}
 .flex-justify-c {justify-content: center;}
 .flex-justify-fe {justify-content: flex-end;}
@@ -91,8 +90,13 @@ flexbox
 .flex-wrap {flex-wrap: wrap;}
 .flex-nowrap {flex-wrap: nowrap;}
 .flex-direction-row-reverse {flex-direction: row-reverse;}
+
+/*==========================================================
+display
+===========================================================*/
 .d-b {display: block;}
 .d-ib {display: inline-block;}
+.d-t {display: table;}
 
 /*==========================================================
 centerring

@@ -1,0 +1,97 @@
+@import "common";
+
+.Header {
+  .hero {
+    
+
+    .hero-main {
+      // position: relative;
+      // display: block;
+      .hero-img {
+        //@include rem("wi",)
+      }
+    }
+  }
+  .header-info-info {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    @include rem("width", 500);
+  }
+  .header-info-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include rem("width", 300);
+  }
+  .main-logo {
+    @include rem("margin-top", -110);
+    //position: relative;
+    .img-logo  {
+      @include rem("width", 290);
+      @include rem("height", 290);
+    }
+  }
+
+  //グロナビ
+  .grobal-nav {
+    .section-content {
+      @include rem("width", 830);
+      @include rem("padding-top", 20);
+    }
+    .menu-icon {
+      @include rem("width", 80);
+      margin: 0 auto;
+      //@include rem("padding", 20);
+    }
+  }
+}
+
+.Oshinagaki {
+  @include rem("padding", 80, 0);
+  .oni > .inner {
+    @include rem("margin-left", -20);
+    //margin-left: -20px;
+  }
+  .oni-big {
+   border-radius: 50%;
+   overflow: hidden;
+  }
+  .oni-small {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    @include rem("margin-top", -70);
+    
+  }
+  .oni-item > .inner {
+    @include rem("padding", 0, 0, 40, 20);
+  }
+  .oni-name {
+    @include fz(18);
+    font-weight: bold;
+  }
+  .ctoa-oshi {
+    @include fz(18);
+    font-weight: bold;
+    border-radius: 50%;
+    @include rem("width", 110);
+    @include rem("height", 110);
+    @include rem("padding-top", 30);
+    &:link {
+      text-decoration: underline;
+    }
+  }
+}
+
+.Genki {
+
+}
+
+.Kodawari {
+
+}
+
+.Footer {
+  
+}

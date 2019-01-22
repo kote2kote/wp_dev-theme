@@ -14,6 +14,9 @@ Respond
     @if $value == xl {
         @media only screen and (max-width: bp(xl)) { @content };    //under 1200px
     }
+    @else {
+        @media only screen and (max-width: $value + px) { @content };    //customize
+    }
 }
 @mixin bp-min($value: md) {
     @if $value == sm {
@@ -27,6 +30,9 @@ Respond
     }
     @if $value == xl {
         @media only screen and (min-width: bp(xl)) { @content };    //below 1200px
+    }
+    @else {
+        @media only screen and (min-width: $value + px) { @content };    //customize
     }
 }
 
