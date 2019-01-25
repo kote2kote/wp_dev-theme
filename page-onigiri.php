@@ -27,19 +27,21 @@
 <div class="header-info-link col cm50">メニュー枠</div>
 	<div class="hero cm0">
 
-		<div class="hero-main flex">
-			<figure class="hero-img col">
-				<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
-			</figure>
-			<figure class="hero-img col">
-				<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
-			</figure>
-			<figure class="hero-img col">
-				<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
-			</figure>
+		<div id="vue-app-window_centering" class="hero-main">
+			<div class="inner flex flex-justify-c">
+				<figure class="hero-img cm0">
+					<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
+				</figure>
+				<figure class="hero-img cm0">
+					<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
+				</figure>
+				<figure class="hero-img cm0">
+					<img src="https://via.placeholder.com/1080x1080/27709b/ffffff?text=image" alt="">
+				</figure>
+			</div>
 		</div>
 
-		<h1 class="main-logo align-center">
+		<h1 class="main-logo align-center cm0">
 			<figure class="img-logo d-ib">
 				<img src="https://via.placeholder.com/1080x1080/cc00cc/ffffff?text=logo" alt="">
 			</figure>
@@ -164,9 +166,10 @@
 			<li class="item cm0">
   			<figure class="item-image"><img src="https://via.placeholder.com/1080x1080/009933/ffffff?text=mini-oni" alt=""></figure>
 			</li>
-
 		</ul>
 		<a href="#" class="ctoa-oshi button d-t m-auto-w cm0">想いを<br>読む</a>
+</div>
+		
 </section>
 
 <section class="Kodawari">
